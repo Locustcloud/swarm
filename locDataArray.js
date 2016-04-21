@@ -1,3 +1,4 @@
+//!VIKTIG! Disse punktene er ikke riktige i forhold til hva som er i canvas. Må rettes på!
 //Arraylist til punktene på kartet
 points = [
 //Cities
