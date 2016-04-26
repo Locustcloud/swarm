@@ -6,7 +6,7 @@ var ctx = canvas.getContext("2d");
 var meepX = 1208;
 var meepY = 559;
 
-function init() {
+/*function init() {
 	
 	imgBoard.src = 'img/brett_border.jpg';
 	imgMeep.src = 'img/meeple.png';
@@ -32,4 +32,4 @@ function draw() {
 	
 }
 
-init();
+init();*/

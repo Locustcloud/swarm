@@ -2,25 +2,41 @@
 <html>
 
 <head>
-<title>The Game</title>
+<title>Parthenon Trail</title>
 <!Stylesheets>
 <link rel="stylesheet" type="text/css" href="mainboard_css.css">
-
+<!Scripts>
+<script src="/socket.io/socket.io.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="loadBoard.js"></script>
+<script src="locDataArray.js"></script>
 </head>
 
 <body>
-	<canvas id="mainBoard" width="1280" height="645" style="border:1px solid #000000; z-index:1">
+	<canvas id="mainBoard" width="960" height="720" style="border:1px solid #000000; z-index:1">
 	Nettleseren din støtter ikke HTML5 sitt canvas tag. Bruk en annen nettleser som Google Chrome! <link src="https://www.google.com/chrome/">Last ned her!</link>
 	Your browser does not support the HTML5 canvas tag. Use another browser like Google Chrome! <link src="https://www.google.com/chrome/">Download!</link>
 	</canvas>
 	
-	<button onclick="moveMeep()" class="button">Launch</button>
+	<div id="chat">
+		<ul id="messages"></ul>
+	</div>
+	<form action="">
+		<input id="m" autocomplete="off" /><button id="send">Send</button>
+	</form>
+	<script>
+		var socket = io();
+		$('form').submit(function(){
+			socket.emit('chat message', $('#m').val());
+			$('#m').val('');
+			return false;
+		});
+			socket.on('chat message', function(msg){
+			$('#messages').append($('<li>').text(msg));
+		});
+	</script>
 	
+	<!button onclick="moveMeep()" class="button"><!Launch><!/button>
 </body>
 
-<!Scripts>
-<script src="loadBoard.js"></script>
-<script src="locDataArray.js"></script>
-<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-<script src="http://your-io-server/socket.io/socket.io.js">
 </html>
