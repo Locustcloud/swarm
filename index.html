@@ -18,15 +18,17 @@
 	Your browser does not support the HTML5 canvas tag. Use another browser like Google Chrome! <link src="https://www.google.com/chrome/">Download!</link>
 	</canvas>
 	
+<div id="chatWrap">
 	<div id="chat">
 		<ul id="messages"></ul>
 	</div>
 	<form action="">
 		<input id="m" autocomplete="off" /><button id="send">Send</button>
 	</form>
+</div>
 	
 	<p id="user" hidden></p>
-	
+
 	<script id=chatting_stuff>
 		var person;
 		var d = new Date();
@@ -39,7 +41,7 @@
 			return false;
 		});
 		
-			socket.on('chat message', function(msg){
+		socket.on('chat message', function(msg){
 			var d = new Date();
 			//$('#messages').append($('<li>').text(d.toLocaleTimeString()));
 			$('#messages').append($('<li>').text('['+d.toLocaleTimeString()+']'+ ' ' + msg));

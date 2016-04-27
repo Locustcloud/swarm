@@ -16,6 +16,12 @@
 	margin-left:325px;
 }
 
+#chatWrap {
+	height: 720px;
+	width: 328px;
+	position: relative;
+}
+
 #chat {
 	float: left;
 	margin: 0;
@@ -36,8 +42,8 @@ form {
 	padding: 5px;
 	bottom: 0;
 	width: 318px;
-	bottom:225px;
-	left: 6px;
+	bottom:-2px;
+	left: -2px;
 }
 
 #m {
