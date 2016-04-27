@@ -12,7 +12,7 @@
 <script src="locDataArray.js"></script>
 </head>
 
-<body>
+<body onload="enterName()">
 	<canvas id="mainBoard" width="960" height="720" style="border:1px solid #000000; z-index:1">
 	Nettleseren din støtter ikke HTML5 sitt canvas tag. Bruk en annen nettleser som Google Chrome! <link src="https://www.google.com/chrome/">Last ned her!</link>
 	Your browser does not support the HTML5 canvas tag. Use another browser like Google Chrome! <link src="https://www.google.com/chrome/">Download!</link>
@@ -24,16 +24,35 @@
 	<form action="">
 		<input id="m" autocomplete="off" /><button id="send">Send</button>
 	</form>
-	<script>
+	
+	<p id="user" hidden></p>
+	
+	<script id=chatting_stuff>
+		var person;
+		var d = new Date();
 		var socket = io();
+		
+		//socket emit
 		$('form').submit(function(){
 			socket.emit('chat message', $('#m').val());
 			$('#m').val('');
 			return false;
 		});
+		
 			socket.on('chat message', function(msg){
-			$('#messages').append($('<li>').text(msg));
+			var d = new Date();
+			//$('#messages').append($('<li>').text(d.toLocaleTimeString()));
+			$('#messages').append($('<li>').text('['+d.toLocaleTimeString()+']'+ ' ' + msg));
+			$('#chat').animate({scrollTop: $('#chat').prop("scrollHeight")}, 692);
 		});
+		
+		function enterName() {
+			person = prompt("Please enter your name:");
+			
+			if (person != null) {
+				socket.emit('user name', person);
+			}
+		};
 	</script>
 	
 	<!button onclick="moveMeep()" class="button"><!Launch><!/button>
