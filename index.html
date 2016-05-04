@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <title>Parthenon Trail</title>
 <!Stylesheets>
@@ -8,28 +7,32 @@
 <!Scripts>
 <script src="/socket.io/socket.io.js"></script>
 <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
-<script src="loadBoard.js"></script>
-<script src="locDataArray.js"></script>
 </head>
 
 <body onload="enterName()">
-	<canvas id="mainBoard" width="960" height="720" style="border:1px solid #000000; z-index:1">
+	<div id="gameBoard">
+	<!Canvas elementet>
+	<canvas id="mainBoard" width="960" height="720">
 	Nettleseren din støtter ikke HTML5 sitt canvas tag. Bruk en annen nettleser som Google Chrome! <link src="https://www.google.com/chrome/">Last ned her!</link>
 	Your browser does not support the HTML5 canvas tag. Use another browser like Google Chrome! <link src="https://www.google.com/chrome/">Download!</link>
 	</canvas>
+	<input id="nextBtn" type="image" src="img/text_bottan.png" width="24" height="34" onClick="ctrlBtn()">
 	
+	<textarea id="storyDialog" readonly>
+	</textarea>
+</div>
 <div id="chatWrap">
 	<div id="chat">
 		<ul id="messages"></ul>
 	</div>
-	<form action="">
+	<form id="meldinger" action="">
 		<input id="m" autocomplete="off" /><button id="send">Send</button>
 	</form>
 </div>
 	
 	<p id="user" hidden></p>
 
-	<script id=chatting_stuff>
+	<script id="chatting_stuff">
 		var person;
 		var d = new Date();
 		var socket = io();
@@ -44,8 +47,25 @@
 		socket.on('chat message', function(msg){
 			var d = new Date();
 			//$('#messages').append($('<li>').text(d.toLocaleTimeString()));
-			$('#messages').append($('<li>').text('['+d.toLocaleTimeString()+']'+ ' ' + msg));
+			$('#messages').append($('<li>').html('['+d.toLocaleTimeString()+']'+ ' ' + msg));
 			$('#chat').animate({scrollTop: $('#chat').prop("scrollHeight")}, 692);
+		});
+		
+		socket.on('user connected', function(user){
+			$('#messages').append($('<li style="color:red; font-weight: bold;">').text(user + ' has connected!'));
+			
+		});
+		
+		socket.on('disconnect', function(){
+			$('#messages').append($('<li style="color:red; font-weight: bold;">').text('You have been disconnected!'));
+			document.getElementById("storyDialog").value = "";
+			StartAnimation = false;
+		});
+		
+		socket.on('readyToRumble', function() {
+			document.getElementById("nextBtn").style.visibility = "hidden";
+			startAnimation = false;
+			draw();
 		});
 		
 		function enterName() {
@@ -53,11 +73,10 @@
 			
 			if (person != null) {
 				socket.emit('user name', person);
+				document.getElementById("storyDialog").value = textDialogs[indexDialog];
 			}
 		};
 	</script>
-	
-	<!button onclick="moveMeep()" class="button"><!Launch><!/button>
 </body>
-
+<script src="loadBoard.js"></script>
 </html>
