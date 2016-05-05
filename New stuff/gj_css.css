@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background: #000000;
+}
+
+p {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	color: white;
+}
+
+a {
+	font-variant:small-caps;
+	font-weight: bold;
+	color: white;
+	font-size: 18px;
+}
+
+#agora, #mouthCoin {
+	color: #c5b358;
+}

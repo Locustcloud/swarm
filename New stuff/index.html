@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="gj_css.css">
+<script src="story_control.js" language="text/javascript"></script>
+<title>Game</title>
+</head>
+
+<body>
+<div id="Story">
+<div id="Scene 1">
+	<div id="valg0">
+	  <p> 
+Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
+Du prøver å se deg rundt, og får plutselig øye på et svakt lys. Lyset ser ut til å hviske noe til deg... 
+      </p>
+	  <footer>
+        	<div>
+           	  <a href="#valg1_0">Gå nærmere lyset</a>
+        </div>
+      </footer>
+  </div>
+    <br>
+  <div id="valg1_0">
+    	<p>
+I det du går nærmere lyset blir hviskingen høyere og du kan høre en stemme som snakker. <br>
+Den ser ut til å snakke til deg: <br><br>
+- <i>Er du en <b>sønn</b> av Zevs eller <b>datter</b> av Hera?</i> <br><br>
+Stemmen gjenntar de samme ordene om og om igjen...
+      	</p>
+        <footer>
+        	<div>
+            	<a href="#valg1_1">Sønn av Zevs</a> | <a href="#valg1_2">Datter av Hera</a>
+            </div>
+        </footer>
+    </div>
+    <br>
+  <div id="valg1_1">
+    <!--Sønnen blir født-->
+    	<p>
+Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
+Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
+Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
+Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br><br>
+<i> - Min sønn, storhet venter på deg bak horisonten...</i>
+        </p>
+        <footer>
+        	<div>
+            	<a href="#Scene 2_gutt">Fortsett</a>
+            </div>
+        </footer>
+    </div>
+</div>
+    <br>
+<div id="Scene 2_gutt">
+    <!--Gutten begynner reisen-->
+<p id="timepass"><i>16 år senere i Athen...</i></p>
+		<p>
+Du løper ned trappen hjemme og klarer neste å velte faren din sin kyrass fra veggen. <br>
+I det du retter den opp igjen får du øye på deg selv i den blanke bronsen. <br><br>
+"Der er du! Ta disse pengene og kjøp appelsiner fra 
+<b id="agora" title="Agoraen var en sentral del av antikkens bypoliser. De hadde rollen som marked og forumer der byens befolkning kunne møtes for å ta viktige avgjørelser."><i>agoraen</i></b> før kjøpmannen drar." <br>
+Moren din dytter deg ut av døra og du <b>løper smilende mot markedet.</b>
+		</p>        
+        <footer>
+        	<div>
+            	<a href="#valg2_0">Løp mot markedet</a>
+            </div>
+        </footer>
+    <br>
+  <div id="valg2_0">
+		<p>
+Agoraen i Athen var det sentrale torget i bystaten Athen. Det er også den mest kjente agoraen.<br>
+Du kan lukte stålet fra myntverket blande seg med den gode lukten fra bakeriet. <br>
+Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å komme deg til kjøpmannen.<br>
+"Hehe, hva har vi her?" En gjeng med banditter står bak deg, og du klarer nesten å <b id="mouthCoin" title="I antikkens hellas ble mynter ofte oppbevart i munnen dersom man ikke eide en myntpose. Dette var også en sikrere måte å oppbevare penger ettersom antikkens klær ikke hadde lommer."><i>svelge myntene du har i munnen</i></b> av frykt.<br><br>
+- Sier du ingenting? Du må ha en munn full av penger. Hva sier du til å spytte dem ut og gi de til meg, så slipper noen å bli skadet?
+		</p>        
+        <footer>
+        	<div>
+            	<a href="#valg2_1">Gi pengene dine til banditten</a> | <a href="#valg2_2">Dytt banditten vekk og løp!</a>
+            </div>
+        </footer>
+    </div>
+    <br>
+  <div id="valg2_1">
+<p style="color: red; font-size: 30px;"><b>GAME OVER!</b></p>
+		<p>
+Du spytter ut myntene i hånden din, gir den gråtende over til banditten og går tomhendt hjem.
+		</p>        
+        <footer>
+        	<div>
+            	<a href="#valg2_0" title="Hopper tilbake til da du møter bandittene">Prøv på nytt</a>
+            </div>
+        </footer>
+    </div>
+    <br>
+      <div id="valg2_2">
+<p style="color: orange;"><b><i><img src="file:///D|/MM502/swarm/img/stopwatch.png" height="20" width="20" alt="stoppeklokke"> Timed event! <img src="file:///D|/MM502/swarm/img/stopwatch.png" height="20" width="20" alt="stoppeklokke"></i></b></p>
+		<p>
+<!--Insert javascript for å kontrollere timer--->
+Du dytter til banditten og han faller på bakken i det du løper ned en bakgate. Du kan høre at de roper etter deg, <br>
+men du fokuserer på å kommme deg vekk. Foran deg ser du noen marmor blokker som blokkerer veien.
+		</p>        
+        <footer>
+        	<div>
+            	<!--Du feiler timer eventen-->
+            	<a href="#valg2_0" title="Hopper tilbake til da du møter bandittene">Prøv på nytt</a>
+                <!--Event success--> <br>
+                <a href="#valg2_3" title="Du hopper over marmoren">HOPP!</a>
+            </div>
+        </footer>
+    </div>
+    <br>
+      <div id="valg2_3">
+		<p>
+Du hopper over marmoren med et enkelt hopp og du hører et smell i det bandittene snubler i sitt hopp. <br>
+Med seier i tankene og glede i sinnet ser du ikke foran deg mens du løper og kræsjer i en armert soldat. <br>
+Bandittene ser ser soldaten og løper vekk, mens du klarer bare å stå der i frykt og smerte i tennene fra myntene du mistet. <br>
+Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg ned på kne.
+		</p>        
+        <footer>
+        	<div>
+            	<!--Du feiler timer eventen-->
+            	<a href="#valg2_4">Fortsett</a>
+            </div>
+        </footer>
+    </div>
+    <br>
+</div>
+</div>
+</body>
+</html>
