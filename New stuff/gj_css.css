@@ -1,22 +1,114 @@
 @charset "utf-8";
 /* CSS Document */
-body {
+
+/* body format */
+body { 
 	background: #000000;
+	/*overflow: hidden;*/
 }
 
+/* Alle p tagger får denne stilen */
 p {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:14px;
 	color: white;
 }
 
+/* Alle a tagger får denne stilen */
 a {
 	font-variant:small-caps;
 	font-weight: bold;
 	color: white;
 	font-size: 18px;
 }
-
+/* Læremateriale snippets */
 #agora, #mouthCoin {
 	color: #c5b358;
+}
+
+/* Kanppen som blir brukt for å få ting til å gå videre */
+.contBtn {
+	background-image: url(img/selections.png);
+	border: none;
+	color: white;
+	padding: 3px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	border-radius: 2px;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4;
+	transition: 0.4;
+	cursor: pointer;
+}
+
+.contBtn:hover {
+	background-image: url(img/selections_on.png);
+	color:#FFD02E;
+	border: none;
+	padding: 3px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	border-radius: 2px;
+	border-color:#FFD02E;
+}
+
+/* All stilkode som håndterer animasjon */
+.darkness {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: fromDarkness;
+	-moz-animation-name: fromDarkness;
+	-o-animation-name: fromDarkness;
+	animation-name: fromDarkness;
+	animation: fromDarkness 5s infinite;
+}
+
+@-webkit-keyframes fromDarkness {
+	0% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+	50% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+	100% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+}
+
+.brighter {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: brighter;
+	-moz-animation-name: brighter;
+	-o-animation-name: brighter;
+	animation-name: brighter;
+	animation: brighter 5s infinite;
+}
+
+@-webkit-keyframes brighter {
+	0% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+	25% {background-image: url(img/M%C3%B8rket/darkness2.jpg);}
+	50% {background-image: url(img/M%C3%B8rket/darkness3.jpg);}
+	75% {background-image: url(img/M%C3%B8rket/darkness4.jpg);}
+	100% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+}
+
+/* Flytting av divisjoner */
+#valg0 .contBtn {
+	margin-left: 520px;
+	margin-top: -200px;
+	position: absolute;
+}
+
+#valg1_0 #selSex {
+	margin-left: 420px;
+	margin-top: -200px;
+	position: absolute;
+}
+
+#valg1_0 .hvisking {
+	margin-top: -40px;
+	position: relative;
 }

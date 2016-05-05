@@ -6,56 +6,55 @@
 <script src="story_control.js" language="text/javascript"></script>
 <title>Game</title>
 </head>
-
 <body>
 <div id="Story">
-<div id="Scene 1">
+<div id="Chapter1">
+<div class="darkness"></div>
 	<div id="valg0">
 	  <p> 
 Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
-Du prøver å se deg rundt, og får plutselig øye på et svakt lys. Lyset ser ut til å hviske noe til deg... 
+Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg... 
       </p>
 	  <footer>
         	<div>
-           	  <a href="#valg1_0">Gå nærmere lyset</a>
+              <button class="contBtn" type="button" onClick="document.getElementById('valg1_0').scrollIntoView();">Gå nærmere lyset</button>
         </div>
       </footer>
   </div>
     <br>
   <div id="valg1_0">
-    	<p>
+  <div class="brighter"></div>
+    	<p class="hvisking">
 I det du går nærmere lyset blir hviskingen høyere og du kan høre en stemme som snakker. <br>
 Den ser ut til å snakke til deg: <br><br>
 - <i>Er du en <b>sønn</b> av Zevs eller <b>datter</b> av Hera?</i> <br><br>
 Stemmen gjenntar de samme ordene om og om igjen...
       	</p>
         <footer>
-        	<div>
-            	<a href="#valg1_1">Sønn av Zevs</a> | <a href="#valg1_2">Datter av Hera</a>
+        	<div id="selSex">
+            	<button class="contBtn" type="button" onClick="document.getElementById('valg1_1').scrollIntoView();">Sønn av Zevs</button> | <button class="contBtn" type="button">Datter av Hera</button>
             </div>
         </footer>
     </div>
     <br>
   <div id="valg1_1">
     <!--Sønnen blir født-->
-    	<p>
-Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
-Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
-Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
-Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br><br>
-<i> - Min sønn, storhet venter på deg bak horisonten...</i>
-        </p>
-        <footer>
+    <p> Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
+      Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
+      Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
+      Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
+  <br>
+  <em> - Min sønn, storhet venter på deg bak horisonten...</em> </p>
+    <footer>
         	<div>
-            	<a href="#Scene 2_gutt">Fortsett</a>
+            	<button class="contBtn" type="button" onClick="document.getElementById('Chapter2_gutt').scrollIntoView();">Fortsett</button>
             </div>
         </footer>
     </div>
 </div>
     <br>
-<div id="Scene 2_gutt">
-    <!--Gutten begynner reisen-->
-<p id="timepass"><i>16 år senere i Athen...</i></p>
+<div id="Chapter2_gutt">
+<p id="timepass"><i>16 år senere i Athenai...</i></p>
 		<p>
 Du løper ned trappen hjemme og klarer neste å velte faren din sin kyrass fra veggen. <br>
 I det du retter den opp igjen får du øye på deg selv i den blanke bronsen. <br><br>
@@ -65,7 +64,7 @@ Moren din dytter deg ut av døra og du <b>løper smilende mot markedet.</b>
 		</p>        
         <footer>
         	<div>
-            	<a href="#valg2_0">Løp mot markedet</a>
+            	<button class="contBtn" type="button" onClick="document.getElementById('valg2_0').scrollIntoView();">Løp mot agoraen</button>
             </div>
         </footer>
     <br>
@@ -79,7 +78,8 @@ Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å kom
 		</p>        
         <footer>
         	<div>
-            	<a href="#valg2_1">Gi pengene dine til banditten</a> | <a href="#valg2_2">Dytt banditten vekk og løp!</a>
+            <button class="contBtn" type="button" onClick="document.getElementById('valg2_1').scrollIntoView();">Gi pengene til banditten</button> |
+            <button class="contBtn" type="button" onClick="document.getElementById('valg2_2').scrollIntoView();">Dytt banditten vekk </button>
             </div>
         </footer>
     </div>
@@ -91,7 +91,7 @@ Du spytter ut myntene i hånden din, gir den gråtende over til banditten og gå
 		</p>        
         <footer>
         	<div>
-            	<a href="#valg2_0" title="Hopper tilbake til da du møter bandittene">Prøv på nytt</a>
+            <button class="contBtn" type="button" onClick="document.getElementById('valg2_0').scrollIntoView();" title="Hopper tilbake til da du møter bandittene">Prøv på nytt</button>
             </div>
         </footer>
     </div>
@@ -106,28 +106,77 @@ men du fokuserer på å kommme deg vekk. Foran deg ser du noen marmor blokker so
         <footer>
         	<div>
             	<!--Du feiler timer eventen-->
-            	<a href="#valg2_0" title="Hopper tilbake til da du møter bandittene">Prøv på nytt</a>
-                <!--Event success--> <br>
-                <a href="#valg2_3" title="Du hopper over marmoren">HOPP!</a>
+                <button class="contBtn" type="button" onClick="document.getElementById('valg2_0').scrollIntoView();">Prøv på nytt</button>
+                <!--Event success--> <br><br>
+                <button class="contBtn" type="button" onClick="document.getElementById('valg2_3').scrollIntoView();" title="Du hopper over marmoren">HOPP!</button><br><br>
+				<button class="contBtn" type="button" onClick="document.getElementById('valg2_4').scrollIntoView();" title="Du klatrer over marmoren, men spytter ut myntene i prosessen">Klatre over</button><br>
             </div>
         </footer>
     </div>
     <br>
       <div id="valg2_3">
+      <!--Beholder Pengene-->
 		<p>
 Du hopper over marmoren med et enkelt hopp og du hører et smell i det bandittene snubler i sitt hopp. <br>
 Med seier i tankene og glede i sinnet ser du ikke foran deg mens du løper og kræsjer i en armert soldat. <br>
-Bandittene ser ser soldaten og løper vekk, mens du klarer bare å stå der i frykt og smerte i tennene fra myntene du mistet. <br>
+Bandittene ser ser soldaten og løper vekk, mens du klarer bare å stå der i frykt. <br>
 Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg ned på kne.
 		</p>        
         <footer>
         	<div>
-            	<!--Du feiler timer eventen-->
-            	<a href="#valg2_4">Fortsett</a>
+				<button class="contBtn" type="button" onClick="document.getElementById('Chapter3').scrollIntoView();">Fortsett</button>
             </div>
         </footer>
     </div>
     <br>
+       <div id="valg2_4">
+       <!--Mister pengene-->   
+		<p>
+Du klatrer over marmoren med et hopp, men banditten tar tak i ryggen din. Du klarer å komme deg unna, <br>
+men spytter ut pengene i prosessen. Med seier i tankene og glede i sinnet ser du ikke foran deg mens du løper og kræsjer i en armert soldat. <br>
+Bandittene ser ser soldaten og løper vekk, mens du klarer bare å stå der i frykt. <br>
+Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg ned på kne.
+		</p>        
+        <footer>
+        	<div>
+            	<button class="contBtn" type="button" onClick="document.getElementById('Chapter3').scrollIntoView();">Fortsett</button>
+            </div>
+        </footer>
+    </div>
+    <br>
+<div id="Chapter 3">
+<!--Du får oppdraget-->
+      <div id="valg3_0">
+		<p>
+Det virker som om tiden står stille i det soldaten bøyer seg ned mot deg. Du legger opp armene frykt, men det som skjer overasker deg. <br>
+Soldaten legger hånden sin på skulderen din: "Går det bra, barn?"<br>
+Du reiser deg opp og forklarer at du har vondt i tennene og må kjøpe noen appelsiner til mor. <br>
+Vakten kjøper appelsiner til deg og går med deg hjem.
+		</p>        
+        <footer>
+        	<div>
+            	<button class="contBtn" type="button" onClick="document.getElementById('valg3_1').scrollIntoView();">Fortsett</button>
+            </div>
+        </footer>
+    </div>
+    <br>
+      <div id="valg3_1">
+		<p>
+Moren din blir blir veldig overasket over å se deg gå inn døra med en væpnet soldat, men roer seg raskt ned. <br>
+Soldaten forteller at han kjenner din far og at han må forbli i Korinthos en stund til.<br>
+Dagen er ferd med å bli veldig anderledes i det soldaten forteller deg at du har fått oppgaven å levere et viktig <br>
+Dokument fra Athen til Sparta. Dette skulle være din fars oppgave, men siden han er ute er det du som må gjøre det. <br><br>
+- Jeg skal hjelpe pappa! <br>
+- Jeg vet du vil, men vær forsiktig. <br><br>
+		</p>        
+        <footer>
+        	<div>
+            	<button class="contBtn" type="button" onClick="document.getElementById('valg3_2').scrollIntoView();">Fortsett</button>
+            </div>
+        </footer>
+    </div>
+    <br>
+</div>
 </div>
 </div>
 </body>
