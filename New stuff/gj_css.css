@@ -4,7 +4,6 @@
 /* body format */
 body { 
 	background: #000000;
-	/*overflow: hidden;*/
 }
 
 /* Alle p tagger får denne stilen */
@@ -22,7 +21,7 @@ a {
 	font-size: 18px;
 }
 /* Læremateriale snippets */
-#agora, #mouthCoin {
+#agora, #hetaira {
 	color: #c5b358;
 }
 
