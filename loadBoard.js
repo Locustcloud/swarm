@@ -1,4 +1,4 @@
-// Global vars
+﻿// Global vars
 var indexDialog = 0;
 var imgDialog = new Image();
 var backDrop = new Image();
@@ -12,6 +12,8 @@ var textDialogs = [
 	"Hello, and welcome to Parthenon. The glorious thing that is this.. thingoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo",
 	"This is a test nr. 2",
 ];
+
+
 
 function init() {
 	
