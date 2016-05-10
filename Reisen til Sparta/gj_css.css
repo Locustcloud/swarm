@@ -1,15 +1,67 @@
 @charset "utf-8";
 /* CSS Document */
+body {
+	overflow: scroll;
+}
+
+p {
+	margin-top: -1px;
+	padding: 5px;
+	}
+	
+#visuals {
+	position: absolute;
+	width: 1280px;
+	height: 720px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	}
+	
+#UI_start, #UI_1 {
+	position: absolute;
+	margin-left: 520px;
+	margin-top: 460px;
+	}
+	
+#textbox {
+	background-color: black;
+	opacity: 0.5;
+	position: absolute;
+	margin-top: 570px;
+	width: 1280px;
+	height: 150px;
+	border-color:#FFFFFF;
+	border-style:solid;
+	border-width: 1px;
+	}
+	
+#begynnelsen, #begynnelsen2 {
+	position: absolute;
+	margin-top: 570px;
+	width: 1280px;
+	height: 150px;
+	border-color:#000000;
+	border-style:solid;
+	border-width: 1px;
+	}
+
 
 /* body format */
 body { 
 	background: #000000;
+	overflow: hidden;
+}
+
+Scene_1 {
+	margin-left: 100px;
+	padding: 10px;
 }
 
 /* Alle p tagger får denne stilen */
 p {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:14px;
+	font-size:12px;
 	color: white;
 }
 
@@ -26,7 +78,7 @@ a {
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn {
+.contBtn, .contBtn_gutt, .contBtn_jente {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -44,7 +96,7 @@ a {
 	cursor: pointer;
 }
 
-.contBtn:hover {
+.contBtn:hover, .contBtn_gutt:hover, .contBtn_jente:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
@@ -58,12 +110,6 @@ a {
 }
 
 /* All stilkode som håndterer animasjon */
-.placeholder {
-	z-index: -1;
-	width: 1280px;
-	height: 720px;
-	}
-
 .darkness {
 	z-index: -1;
 	width: 1280px;
@@ -78,7 +124,7 @@ a {
 @-webkit-keyframes fromDarkness {
 	0% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
 	50% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
-	100% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+	100% {background-image: url(img/m%C3%B8rket/darkness0.jpg)
 }
 
 .brighter {
@@ -114,6 +160,6 @@ a {
 }
 
 #valg1_0 .hvisking {
-	margin-top: -30px;
+	margin-top: -40px;
 	position: relative;
 }

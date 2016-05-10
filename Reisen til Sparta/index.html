@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Reisen til Sparta</title>
+<link rel="stylesheet" type="text/css" href="gj_css.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="kontroller.js"></script>
+</head>
+
+<body>
+<div id="world">
+<div id="gameframe">
+	<div id="visuals">
+    <div class="darkness"></div>
+    </div>
+    <div id="UI_start">
+    	<table style="width: 100%">
+        	<tr>
+            	<td><button class="contBtn" type="button">Gå nærmere lyset</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="textbox" width="1280" height="138">
+    </div>
+    <div id="begynnelsen" width="1280" height="138">
+    	<p>
+Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
+Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg... 
+		</p>
+    </div>
+<!--Scene 1: Velg kjønn-->
+<div id="scene1" hidden="true">
+<div class="darkness"></div>
+    <div id="UI_1">
+    	<table style="width: 100%">
+        	<tr>
+            	<td><button class="contBtn_gutt" type="button">Sønn av Zevs</button></td>
+            </tr>
+        	<tr>
+            	<td><button class="contBtn_jente" type="button">Datter av Hera</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="begynnelsen2" width="1280" height="138">
+    	<p>
+I det du går nærmere lyset blir hviskingen høyere og du kan høre en stemme som snakker. <br>
+Den ser ut til å snakke til deg: <br><br>
+-	Er du en sønn av Zevs eller datter av Hera?
+<br><br>
+Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg... 
+		</p>
+    </div>
+</div>
+<!--Scene 2: Fødsel-->
+<div id="scene2" hidden="true">
+<div class="darkness"></div>
+    <div id="UI_2">
+    	<table style="width: 100%">
+        	<tr>
+            	<td><button class="contBtn" type="button">Fortsett</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="fodsel" width="1280" height="138">
+    	<p>
+Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
+Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
+Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
+Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
+  <br>
+<em> - Min sønn, storhet venter på deg bak horisonten...</em>
+		</p>
+    </div>
+</div>
+
+<!--Over arching divs-->
+</div>
+</div>
+</body>
+</html>
