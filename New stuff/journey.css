@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	
+}
+
+#scene1, #scene2 {
+	position: relative;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	height: 720px;
+	width: 1280px;
+}
+
+.bilder {
+	position: relative;
+	z-index: -1;
+	height: 720px;
+	width: 1280px;
+	border-color: red;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.UI {
+	position: relative;
+	z-index: 1;
+	margin-left: 520px;
+	margin-top: -400px;
+}
+
+.textbox {
+	position: relative;
+	margin-top: 215px;
+	z-index: 2;
+	background-color: black;
+	opacity: 0.5;
+	width: 1280px;
+	height: 150px;
+	border-color:#FFFFFF;
+	border-style:solid;
+	border-width: 1px;
+}
+
+.content {
+	position: relative;
+	z-index: 3;
+	margin-top: -1px;
+	width: 1280px;
+	height: 150px;
+	border-color:#FFFFFF;
+	border-style:solid;
+	border-width: 1px;
+}
+
+/*
+p {
+	margin-top: -1px;
+	padding: 5px;
+	}
+	
+.bilder {
+	position: absolute;
+	width: 1280px;
+	height: 720px;
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	}
+	
+.UI {
+	position: absolute;
+	margin-left: 520px;
+	margin-top: 460px;
+	}
+	
+.textbox {
+	background-color: black;
+	opacity: 0.5;
+	position: absolute;
+	margin-top: 570px;
+	width: 1280px;
+	height: 150px;
+	border-color:#FFFFFF;
+	border-style:solid;
+	border-width: 1px;
+	}
+	
+.content {
+	position: absolute;
+	margin-top: 570px;
+	width: 1280px;
+	height: 150px;
+	border-color:#000000;
+	border-style:solid;
+	border-width: 1px;
+	}*/
+	
+/* Alle p tagger får denne stilen */
+p {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:12px;
+	color: white;
+}
+
+/* Alle a tagger får denne stilen */
+a {
+	font-variant:small-caps;
+	font-weight: bold;
+	color: white;
+	font-size: 18px;
+}
+/* Læremateriale snippets */
+#agora, #hetaira {
+	color: #c5b358;
+}
+
+/* Kanppen som blir brukt for å få ting til å gå videre */
+.contBtn, .contBtn_gutt, .contBtn_jente {
+	background-image: url(img/selections.png);
+	border: none;
+	color: white;
+	padding: 3px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	border-radius: 2px;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	-ms-transition: 0.4s;
+	-o-transition: 0.4;
+	transition: 0.4;
+	cursor: pointer;
+}
+
+.contBtn:hover, .contBtn_gutt:hover, .contBtn_jente:hover {
+	background-image: url(img/selections_on.png);
+	color:#FFD02E;
+	border: none;
+	padding: 3px 50px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	border-radius: 2px;
+	border-color:#FFD02E;
+}
+
+/* All stilkode som håndterer animasjon */
+.darkness {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: fromDarkness;
+	-moz-animation-name: fromDarkness;
+	-o-animation-name: fromDarkness;
+	animation-name: fromDarkness;
+	animation: fromDarkness 5s infinite;
+}
+
+@-webkit-keyframes fromDarkness {
+	0% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+	50% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+	100% {background-image: url(img/m%C3%B8rket/darkness0.jpg)
+}
+
+.brighter {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: brighter;
+	-moz-animation-name: brighter;
+	-o-animation-name: brighter;
+	animation-name: brighter;
+	animation: brighter 5s infinite;
+}
+
+@-webkit-keyframes brighter {
+	0% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+	25% {background-image: url(img/M%C3%B8rket/darkness2.jpg);}
+	50% {background-image: url(img/M%C3%B8rket/darkness3.jpg);}
+	75% {background-image: url(img/M%C3%B8rket/darkness4.jpg);}
+	100% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+}
+
+/* Flytting av divisjoner */
+#valg0 .contBtn {
+	margin-left: 520px;
+	margin-top: -200px;
+	position: absolute;
+}
+
+#valg1_0 #selSex {
+	margin-left: 420px;
+	margin-top: -200px;
+	position: absolute;
+}
+
+#valg1_0 .hvisking {
+	margin-top: -40px;
+	position: relative;
+}

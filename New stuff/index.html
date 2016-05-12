@@ -6,70 +6,118 @@
 <title>Game</title>
 </head>
 <body>
+<!--div id="scene1">
+  <div class="bilder">
+    	<div><img src="img/mørket/darkness5.jpg" width="1280" height="720" alt=""/></div>
+    </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+            	<td><button class="contBtn" type="button">Gå nærmere lyset</button></td>
+            </tr>
+        </table>
+    </div>
+    <div class="textbox" width="1280" height="138">
+    </div>
+    <div class="content" width="1280" height="138">
+    	<p>
+Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
+Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg...        
+    	</p>
+    </div>
+</div-->
+
+<!--div id="scene2">
+	<div class="bilder">
+    	<div></div>
+    </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+            	<td></td>
+            </tr>
+        </table>
+    </div>
+    <div class="textbox" width="1280" height="138">
+    </div>
+    <div class="content" width="1280" height="138">
+    	<p>
+        
+    	</p>
+    </div>
+</div-->
+
+
 <div id="Story">
 <div id="akt1">
 <div class="darkness"></div>
-	<div id="valg0">
-	  <p> 
+<div id="valg0">
+<p> 
 Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
 Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg... 
-      </p>
-	  <footer>
-        	<div>
-              <button class="contBtn" type="button" onClick="document.getElementById('valg1_0').scrollIntoView();">Gå nærmere lyset</button>
-        </div>
-      </footer>
+</p>
+<footer>
+      <div>
+        <button class="contBtn" type="button" onClick="document.getElementById('valg1_0').scrollIntoView();">Gå nærmere lyset</button>
   </div>
-    <br>
-  <div id="valg1_0">
-  <div class="brighter"></div>
-    	<p class="hvisking">
+</footer>
+</div>
+<br>
+<div id="valg1_0">
+<div class="brighter"></div>
+<p class="hvisking">
 I det du går nærmere lyset blir hviskingen høyere og du kan høre en stemme som snakker. <br>
 Den ser ut til å snakke til deg: <br><br>
 - <i>Er du en <b>sønn</b> av Zevs eller <b>datter</b> av Hera?</i> <br><br>
 Stemmen gjenntar de samme ordene om og om igjen...
-      	</p>
-        <footer>
-        	<div id="selSex">
-            	<button class="contBtn" type="button" onClick="document.getElementById('valg1_1').scrollIntoView();">Sønn av Zevs</button> | <button class="contBtn" type="button">Datter av Hera</button>
-            </div>
-        </footer>
+</p>
+<footer>
+    <div id="selSex">
+        <button class="contBtn" type="button" onClick="document.getElementById('valg1_1').scrollIntoView();">Sønn av Zevs</button> | <button class="contBtn" type="button">Datter av Hera</button>
     </div>
-  <div id="valg1_1">
-  <div class="placeholder">
-  <img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
-  </div>
-    <!--Sønnen blir født-->
-    <p> Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
-      Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
-      Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
-      Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
-  <br>
-  <em> - Min sønn, storhet venter på deg bak horisonten...</em> </p>
-    <footer>
-        	<div>
-            	<button class="contBtn" type="button" onClick="document.getElementById('Chapter2_gutt').scrollIntoView();">Fortsett</button>
-            </div>
-        </footer>
-    </div>
+</footer>
 </div>
-    <br>
+<br>
+
+<div id="valg1_1">
+<div class="placeholder">
+<img src="img/placeholder2.jpg" alt="Placeholder" width="1286" height="720">
+</div>
+<!--Sønnen blir født-->
+<p> Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
+Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
+Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
+Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
+<br>
+<em> - Min sønn, storhet venter på deg bak horisonten...</em> </p>
+<footer>
+      <div>
+          <button class="contBtn" type="button" onClick="document.getElementById('akt2_gutt').scrollIntoView();">Fortsett</button>
+      </div>
+  </footer>
+</div>
+</div>
+<br>
+
 <div id="akt2_gutt">
+<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
 <p id="timepass"><i>16 år senere i Athenai...</i></p>
-		<p>
+<p>
 Du løper ned trappen hjemme og klarer neste å velte faren din sin kyrass fra veggen. <br>
 I det du retter den opp igjen får du øye på deg selv i den blanke bronsen. <br><br>
 "Der er du! Ta disse pengene og kjøp appelsiner fra 
-<b id="agora" title="Agoraen var en sentral del av antikkens bypoliser. De hadde rollen som marked og forumer der byens befolkning kunne møtes for å ta viktige avgjørelser."><i>agoraen</i></b> før kjøpmannen drar." <br>
+<b id="agora" title="Agoraen var en sentral del av antikkens bypoliser. De hadde rollen som marked og forumer der byens befolkning kunne møtes for å ta viktige avgjørelser."><i>agoraen</i></b> før kjøpmannen drar."<br>
 Moren din dytter deg ut av døra og du <b>løper smilende mot markedet.</b>
-		</p>        
-        <footer>
-        	<div>
-            	<button class="contBtn" type="button" onClick="document.getElementById('valg2_0').scrollIntoView();">Løp mot agoraen</button>
-            </div>
-        </footer>
-    <br>
+</p>        
+<footer>
+    <div>
+        <button class="contBtn" type="button" onClick="document.getElementById('valg2_0').scrollIntoView();">Løp mot agoraen</button>
+    </div>
+</footer>
+<br>
+
   <div id="valg2_0">
+  <img src="img/placeholder2.jpg" alt="Placeholder" width="1286" height="720">
 		<p>
 Agoraen i Athen var det sentrale torget i bystaten Athen. Det er også den mest kjente agoraen.<br>
 Du kan lukte stålet fra myntverket blande seg med den gode lukten fra bakeriet. <br>
@@ -86,6 +134,7 @@ Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å kom
     </div>
     <br>
   <div id="valg2_1">
+<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">  
 <p style="color: red; font-size: 30px;"><b>GAME OVER!</b></p>
 		<p>
 Du gir myntene over til banditten og ender opp med å gå hjem, trist og tomhendt.
