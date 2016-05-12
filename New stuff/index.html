@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="gj_css.css">
-<script type="text/javascript" src="story_control.js"></script>
 <title>Game</title>
 </head>
 <body>
@@ -185,7 +184,7 @@ Dagen i dag har vært lang og du må gjøre deg klar til å reise ut i morgen.
 Du våkner av at moren din står i døra på rommet ditt med en lær bundet pakke.<br><br>
 Du går trøtt ut av senga, kler på deg og gir hun en klem. <br><br>
 </p>
-<p id="inventory"></p>        
+<p id="inventory_gift"></p>        
 <footer>
     <div>
         <button class="contBtn_inv" type="button" onClick="listPackage()">Spør hva som er i pakken</button> | 
@@ -196,19 +195,20 @@ Du går trøtt ut av senga, kler på deg og gir hun en klem. <br><br>
 <br>
 
 <div id="valg3_3">
-		<p>
+<p>
 Frokosten smaker fantastisk med de ferske appelsinene fra dagen før. Du hiver i deg så mye orker å spise.<br><br>
 Etter at du har spist tar du på deg skoene, gir moren din en god klem<br><br>
 Med innholdet i gaven på deg og en liten tåre i øyet gjør du deg til å reise. Soldaten fra igår står klar med en hest til han og deg.
-		</p>        
-        <footer>
-        	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Begynn reisen mot Korinthos</button> |         
-                <input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()">
-            </div>
-        </footer>
+</p>
+<p id="inventory"></p>        
+<footer>
+    <div>
+        <button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Begynn reisen mot Korinthos</button> |         
+        <input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()">
     </div>
-    <br>
+</footer>
+</div>
+<br>
 <div id="valg3_4">
 		<p>
 Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærheten av Korinthos, noe som gjør den til en hub for gjennomreisende. <br><br>
@@ -257,7 +257,7 @@ Slavehandleren ser bort på bakke der angriperen ligger død og sier noe på et 
 		</p>        
         <footer>
         	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_9').scrollIntoView();" title="">Dra til sentrum</button> 
+              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_8').scrollIntoView();" title="">Dra til sentrum</button> 
             </div>
         </footer>
     </div>
@@ -269,7 +269,8 @@ Du vandrer inn mot byens sentrum.  Hvor vil du gå herfra?<br>
 </p>        
 <footer>
     <div>
-        <button class="contBtn" type="button" onClick="document.getElementById('valg3_9').scrollIntoView();" title="">Tempelet</button> | <button class="contBtn" type="button" onClick="document.getElementById('valg3_10').scrollIntoView();" title="">Filosofer</button> 
+        <button class="contBtn_tempel" type="button" onClick="herbs();">Tempelet</button> | 
+        <button class="contBtn" type="button" onClick="document.getElementById('valg3_10').scrollIntoView();" title="">Filosofer</button> 
     </div>
 </footer>
 </div>
@@ -279,17 +280,19 @@ Du vandrer inn mot byens sentrum.  Hvor vil du gå herfra?<br>
 <p>
 I antikkens Megara var det et tempel der man kunne be til gudinnen Athene. De fleste byer rundt Athen adopterte dette og bygde templer i heder.<br>
 Du setter deg ned i hagen foran templet for å kunne slappe av og høre på hva prestene i byen sier.<br>
-En prest kommer bort til deg og gir deg en velsignet skriftrull med legende urter i seg.
-</p>        
+</p>
+<p id="getHerb"></p>
+<p id="inventory1"></p>        
 <footer>
     <div>
-        <button class="contBtn" type="button" onClick="document.getElementById('valg3_14, valg_15').scrollIntoView();" title="">Tilbake til sentrum</button>  
+        <button class="contBtn" type="button" onClick="document.getElementById('valg3_14, valg_15').scrollIntoView();" title="">Tilbake til sentrum</button> | 
+        <input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()">  
     </div>
 </footer>
 </div>
 <br>
 
-<div id="valg3_13">
+<div id="valg3_10">
 <p>
 I skyggen ved en fontene ser du en gruppe menn som taler til en forsamling. Du går bort og får vite at disse er filosofer som taler til folket.<br>
 <i>Filosofene i antikkens tid var hva vi kjenner som nåtidens lærere, og de som var fra Athen dro ofte ut for å opplyse folket i nærliggende byer.</i><br>
@@ -588,4 +591,5 @@ Vakten ser tenkende ut i luften før han ber deg gjøre deg klar for alt.<br>
 </div>
 </div>
 </body>
+<script type="text/javascript" src="story_control.js"></script>
 </html>

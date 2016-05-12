@@ -13,9 +13,31 @@ p {
 	color: white;
 }
 
-#inventory {
+#inventory, #inventory1 {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size:14px;
+	font-size:16px;
+	color: #cc9900;
+	position: absolute;
+	margin-left: 1040px;
+	margin-top: -29px;
+}
+
+#getHerb {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:16px;
+	color: #00ABFF;
+	font-style:italic;
+}
+
+.bag {
+	position: absolute;
+	margin-top: -29px;
+	margin-left: 640px;
+}
+
+#inventory_gift {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:16px;
 	color: #cc9900;
 }
 
@@ -32,7 +54,7 @@ a {
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn, .contBtn_inv {
+.contBtn, .contBtn_inv, .contBtn_tempel {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -50,7 +72,7 @@ a {
 	cursor: pointer;
 }
 
-.contBtn:hover, .contBtn_inv:hover {
+.contBtn:hover, .contBtn_inv:hover, .contBtn_tempel:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
@@ -61,12 +83,6 @@ a {
 	font-size: 18px;
 	border-radius: 2px;
 	border-color:#FFD02E;
-}
-
-.bag {
-	position: absolute;
-	margin-top: -29px;
-	margin-left: 680px;
 }
 
 /* All stilkode som håndterer animasjon */
