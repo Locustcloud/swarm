@@ -13,6 +13,12 @@ p {
 	color: white;
 }
 
+#inventory {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	color: #cc9900;
+}
+
 /* Alle a tagger får denne stilen */
 a {
 	font-variant:small-caps;
@@ -26,7 +32,7 @@ a {
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn {
+.contBtn, .contBtn_inv {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -44,7 +50,7 @@ a {
 	cursor: pointer;
 }
 
-.contBtn:hover {
+.contBtn:hover, .contBtn_inv:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
@@ -55,6 +61,13 @@ a {
 	font-size: 18px;
 	border-radius: 2px;
 	border-color:#FFD02E;
+}
+
+.bag {
+	cursor: pointer;
+	position: absolute;
+	margin-top: -30px;
+	margin-left: 100px;
 }
 
 /* All stilkode som håndterer animasjon */
