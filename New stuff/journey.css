@@ -1,5 +1,14 @@
 @charset "utf-8";
 /* CSS Document */
+body {
+	background-color: black;	
+}
+
+#scene1 {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 p {
 	color:#FFFFFF;
 	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -28,6 +37,16 @@ p {
 	margin-top: 582px;
 }
 
+.textbox_lg {
+	width: 1280px;
+	height: 200px;
+	background-color: #000000;
+	opacity: 0.5;
+	z-index: 6;
+	position: absolute;
+	margin-top: 530px;
+}
+
 .content_sperre {
 	width: 1280px;
 	height: 582px;
@@ -43,10 +62,18 @@ p {
 	margin-top: 3px;
 }
 
+.content_lg {
+	width: 1280px;
+	height: 138px;
+	z-index: 7;
+	position: relative;
+	margin-top: -50px;
+}
+
 .UI {
 	z-index: 4;
 	position: absolute;
-	margin-left: 480px;
+	margin-left: 508px;
 	margin-top: 450px;
 }
 
@@ -57,8 +84,15 @@ p {
 	margin-top: -650px;
 }
 
+.timedEvent {
+	z-index: 5;
+	positon: absolute;
+	margin-top: -200px;
+	margin-left: 536px;
+}
+
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn {
+.contBtn, .contBtn_inv {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -76,7 +110,7 @@ p {
 	cursor: pointer;
 }
 
-.contBtn:hover {
+.contBtn:hover, .contBtn_inv:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
@@ -87,4 +121,51 @@ p {
 	font-size: 18px;
 	border-radius: 2px;
 	border-color:#FFD02E;
+}
+
+#inventory_gift {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:14px;
+	color: #00C0D0;
+	margin-top: -30px;
+	font-style: italic;
+}
+
+/* Animasjoner */
+/* Scene 1 */
+.darkness {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: fromDarkness;
+	-moz-animation-name: fromDarkness;
+	-o-animation-name: fromDarkness;
+	animation-name: fromDarkness;
+	animation: fromDarkness 5s infinite;
+}
+
+@-webkit-keyframes fromDarkness {
+	0% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+	50% {background-image: url(img/m%C3%B8rket/darkness1.jpg);}
+	100% {background-image: url(img/M%C3%B8rket/darkness0.jpg);}
+}
+
+/* Scene 2 */
+.brighter {
+	z-index: -1;
+	width: 1280px;
+	height: 720px;
+	-webkit-animation-name: brighter;
+	-moz-animation-name: brighter;
+	-o-animation-name: brighter;
+	animation-name: brighter;
+	animation: brighter 5s infinite;
+}
+
+@-webkit-keyframes brighter {
+	0% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
+	25% {background-image: url(img/M%C3%B8rket/darkness2.jpg);}
+	50% {background-image: url(img/M%C3%B8rket/darkness3.jpg);}
+	75% {background-image: url(img/M%C3%B8rket/darkness4.jpg);}
+	100% {background-image: url(img/M%C3%B8rket/darkness1.jpg);}
 }
