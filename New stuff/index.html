@@ -4,9 +4,14 @@
 <meta charset="utf-8">
 <!--link rel="stylesheet" href="gj_css.css"-->
 <link rel="stylesheet" href="journey.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="story_control.js"></script>
 <title>Game</title>
 </head>
 <body>
+
+<input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="ShowThisShit()" style="visibility:hidden">
+<p id="inventory" style="visibility:hidden"></p>
 
 <div id="akt1">
 <div id="scene1">
@@ -151,8 +156,8 @@ Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
     <p>
 Agoraen i Athen var det sentrale torget i bystaten Athen. Det er også den mest kjente agoraen.<br>
 Du kan lukte stålet fra myntverket blande seg med den gode lukten fra bakeriet. <br>
-Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å komme deg til kjøpmannen.<br>
-"Hehe, hva har vi her?" En gjeng med banditter står bak deg, og du klarer nesten å miste myntene du har i hånden.
+Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å komme deg til kjøpmannen.<br><br>
+"Hehe, hva har vi her?" En gjeng med banditter står bak deg, og du klarer nesten å miste myntene du har i hånden. <br>
 - Hva har vi her? Hva skal en ung gutt med så mye penger? Gi oss pengene så blir ingen skadet.
     </p>
   </div>
@@ -312,7 +317,7 @@ Dagen i dag har vært lang og du må gjøre deg klar til å reise ut i morgen.
   </div>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 <div id="scene8_gutt">
   <div class="bilde">
@@ -324,7 +329,7 @@ Dagen i dag har vært lang og du må gjøre deg klar til å reise ut i morgen.
                 <td><button class="contBtn_inv" type="button" onClick="listPackage()">Spør hva som er i pakken</button></td>
             </tr>
         	<tr>
-                <td><button class="contBtn" type="button" onClick="document.getElementById('scene5_gutt_løp').scrollIntoView();">Gå ned og spis frokost</button></td>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene10_gutt').scrollIntoView();">Gå ned og spis frokost</button></td>
             </tr>
       </table>
   </div>
@@ -344,6 +349,66 @@ Du går trøtt ut av senga, kler på deg og gir hun en klem. <br><br>
   </div>
 </div>
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene9_gutt">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="showBar();">Begynn reisen mot Korinthos</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Frokosten smaker fantastisk med de ferske appelsinene fra dagen før. Du hiver i deg så mye orker å spise.<br><br>
+Etter at du har spist tar du på deg skoene, gir moren din en god klem<br><br>
+Med innholdet i gaven på deg og en liten tåre i øyet gjør du deg til å reise. Soldaten fra igår står klar med en hest til han og deg.
+    </p>  
+  </div>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="akt2">
+	<div id="scene10_gutt">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Begynn reisen mot Korinthos</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærheten av Korinthos, noe som gjør den til en hub for gjennomreisende. <br><br>
+Dere stopper i byen for å samle proviant og for å samle informasjon. Mens du går rundt i byen går en gruppe folk som ser ut som slaver forbi deg. <br>
+Denne gruppen ledes av en høy, mørkhudet mann med sverd på beltet. <br><br>
+Slavene ser ut som Athenere. <br>
+En av slavene rømmer og begynner å slå rundt seg og løper mot deg.
+Hva gjør du?
+    </p>
+  </div>
+</div>
 </div>
 
 <div id="Story">
@@ -378,22 +443,6 @@ Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg n
     </div-->
     <br>
 <div id="akt3">
-
-<div id="valg3_3">
-<p>
-Frokosten smaker fantastisk med de ferske appelsinene fra dagen før. Du hiver i deg så mye orker å spise.<br><br>
-Etter at du har spist tar du på deg skoene, gir moren din en god klem<br><br>
-Med innholdet i gaven på deg og en liten tåre i øyet gjør du deg til å reise. Soldaten fra igår står klar med en hest til han og deg.
-</p>
-<p id="inventory"></p>        
-<footer>
-    <div>
-        <button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Begynn reisen mot Korinthos</button> |         
-        <input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()">
-    </div>
-</footer>
-</div>
-<br>
 <div id="valg3_4">
 		<p>
 Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærheten av Korinthos, noe som gjør den til en hub for gjennomreisende. <br><br>
@@ -775,5 +824,4 @@ Vakten ser tenkende ut i luften før han ber deg gjøre deg klar for alt.<br>
 </div>
 </div>
 </body>
-<script type="text/javascript" src="story_control.js"></script>
 </html>

@@ -1,12 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 body {
-	background-color: black;	
-}
-
-#scene1 {
-	margin-left: auto;
-	margin-right: auto;
+	background-color: black;
 }
 
 p {
@@ -31,7 +26,7 @@ p {
 	width: 1280px;
 	height: 138px;
 	background-color: #000000;
-	opacity: 0.5;
+	opacity: 0.7;
 	z-index: 2;
 	position: absolute;
 	margin-top: 582px;
@@ -41,7 +36,7 @@ p {
 	width: 1280px;
 	height: 200px;
 	background-color: #000000;
-	opacity: 0.5;
+	opacity: 0.7;
 	z-index: 6;
 	position: absolute;
 	margin-top: 530px;
@@ -89,6 +84,18 @@ p {
 	positon: absolute;
 	margin-top: -200px;
 	margin-left: 536px;
+}
+
+.bag {
+	position: fixed;
+	z-index: 9998;
+}
+
+.inventory {
+	position: fixed;
+	z-index: 9999;
+	margin-left: 50px;
+	background-image: url(img/bag_panel.png);
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */

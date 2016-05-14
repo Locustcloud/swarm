@@ -1,15 +1,25 @@
 // JavaScript Document
 var inv = ["Bronsesverd", " bronserustning"," kart"];
+var executed = false;
+
+function ShowThisShit(){
+	"use strict";
+  	if (!executed){
+	  executed = true;
+	  $(".inventory").append("<ul id='list'><b><u>Inventar: <br><u></b></ul>");
+	  $.each(inv, function(n, elem) {
+	  $("#list").append("<li>" + elem + "</li>");
+	  console.log(executed);
+	  });
+  } else{
+	  $("#list").remove();
+	  executed = false;
+ }
+}
 
 function listPackage() {
 	"use strict";
 	document.getElementById("inventory_gift").innerHTML = "<strong>Innholdet i gaven: </strong>" + inv;
-}
-
-function listInv() {
-	"use strict";
-	document.getElementById("inventory").innerHTML = "<strong>Inventar: </strong>" + inv;
-	document.getElementById("inventory1").innerHTML = "<strong>Inventar: </strong>" + inv;
 }
 
 function herbs() {
@@ -19,15 +29,8 @@ function herbs() {
 	inv.push(" urter");
 }
 
-
-
-/*$(document).ready(function() {
+function showBar() {
 	"use strict";
-    $('.contBtn').click(scene1);
-});
-
-function scene1() {
-	"use strict";
-	$('#begynnelsen').replaceWith($('#begynnelsen2'));
-	$('#UI_start').replaceWith($('#UI_1'));
-	$('#scene1').show();*/
+	document.getElementById('valg9_gutt').scrollIntoView();
+	document.getElementById("inventory").style.visibility = "visible";
+}
