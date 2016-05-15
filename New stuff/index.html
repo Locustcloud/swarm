@@ -10,8 +10,8 @@
 </head>
 <body>
 
-<input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="ShowThisShit()" style="visibility:hidden">
-<p id="inventory" style="visibility:hidden"></p>
+<input type="image" src="img/bag.png" height="57" width="50" id="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="ShowThisShit()" style="visibility:hidden">
+<p class="inventory"></p>
 
 <div id="akt1">
 <div id="scene1">
@@ -329,7 +329,7 @@ Dagen i dag har vært lang og du må gjøre deg klar til å reise ut i morgen.
                 <td><button class="contBtn_inv" type="button" onClick="listPackage()">Spør hva som er i pakken</button></td>
             </tr>
         	<tr>
-                <td><button class="contBtn" type="button" onClick="document.getElementById('scene10_gutt').scrollIntoView();">Gå ned og spis frokost</button></td>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene9_gutt').scrollIntoView();">Gå ned og spis frokost</button></td>
             </tr>
       </table>
   </div>
@@ -388,7 +388,10 @@ Med innholdet i gaven på deg og en liten tåre i øyet gjør du deg til å reis
     <div class="UI">
     	<table style="width: 100%">
         	<tr>
-                <td><button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Begynn reisen mot Korinthos</button></td>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene11_gutt_angrep0').scrollIntoView();" title="">Angrip fangen</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene11_gutt_dukk0').scrollIntoView();" title="">Dukk unna</button></td>
             </tr>
       </table>
   </div>
@@ -404,11 +407,181 @@ Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærh
 Dere stopper i byen for å samle proviant og for å samle informasjon. Mens du går rundt i byen går en gruppe folk som ser ut som slaver forbi deg. <br>
 Denne gruppen ledes av en høy, mørkhudet mann med sverd på beltet. <br><br>
 Slavene ser ut som Athenere. <br>
-En av slavene rømmer og begynner å slå rundt seg og løper mot deg.
+En av slavene rømmer, begynner å slå rundt seg, dreper en annen slave og løper mot deg.
 Hva gjør du?
     </p>
   </div>
 </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_angrep0">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('valg3_4').scrollIntoView();" title="">Er noen fra Argos?</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går bort til slavedriveren og spør hvor slavene er fra. De viser seg å ikke være slaver, men tidligere forbrytere ment for arenaene i Roma.<br><br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_angrep1">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Ta imot pengene, gå mot sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+"Han du nettopp drepte var fra Argos, men det dyret var allerede ment for Romas arenaer" sier slavedriveren på brukken Gresk.<br><br>
+Slavehandleren gir deg noen mynter og ber deg om å dra. Dette dyret trengtes ikke lengere og dermed var han sine midler dine.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_dukk0">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Dra til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du klarer å hoppe unna og fangen klarer å stikke av. <br>
+Slavehandleren ser bort på bakkenn der angriperen ligger død og sier noe på et språk du ikke forstår.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="herbs();" title="">Tempelet</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('valg3_10').scrollIntoView();" title="">Filosofer</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du vandrer inn mot byens sentrum.  Hvor vil du gå herfra?<br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt_tempel">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Tilbake til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+I antikkens Megara var det et tempel der man kunne be til gudinnen Athene. De fleste byer rundt Athen adopterte dette og bygde templer i heder.<br>
+Du setter deg ned i hagen foran templet for å kunne slappe av og høre på hva prestene i byen sier.<br>
+    </p><br>
+    <p id="getHerb"></p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt_filosof">
+  <div class="bilde">
+   	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('valg3_14, valg_15').scrollIntoView();" title="">Tilbake til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+I skyggen ved en fontene ser du en gruppe menn som taler til en forsamling. Du går bort og får vite at disse er filosofer som taler til folket.<br>
+<i>Filosofene i antikkens tid var hva vi kjenner som nåtidens lærere, og de som var fra Athen dro ofte ut for å opplyse folket i nærliggende byer.</i><br>
+Du går bort til en av filosofene, slår av en prat og filosofen gir deg navnet til hans lærer i Korinthos.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
 </div>
 
 <div id="Story">
@@ -443,59 +616,6 @@ Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg n
     </div-->
     <br>
 <div id="akt3">
-<div id="valg3_4">
-		<p>
-Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærheten av Korinthos, noe som gjør den til en hub for gjennomreisende. <br><br>
-Dere stopper i byen for å samle proviant og for å samle informasjon. Mens du går rundt i byen går en gruppe folk som ser ut som slaver forbi deg. <br>
-Denne gruppen ledes av en høy, mørkhudet mann med sverd på beltet. <br><br>
-Slavene ser ut som Athenere. <br>
-En av slavene rømmer og begynner å slå rundt seg og løper mot deg.
-Hva gjør du?
-<!--<b id="hetaira" title="Agoraen var en sentral del av antikkens bypoliser. De hadde rollen som marked og forumer der byens befolkning kunne møtes for å ta viktige avgjørelser."><i>hetairaer.</i></b>-->
-		</p>        
-        <footer>
-        	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_5').scrollIntoView();" title="">Hev sverdet og drep fangen</button> | 
-                <button class="contBtn" type="button" onClick="document.getElementById('valg3_7').scrollIntoView();" title="">Dukk unna</button>
-            </div>
-        </footer>
-    </div>
-    <br>
-<div id="valg3_5">
-		<p>
-Du går bort til slavedriveren og spør hvor slavene er fra. De viser seg å ikke være slaver, men tidligere forbrytere ment for arenaene i Roma.<br><br>
-		</p>        
-        <footer>
-        	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_6').scrollIntoView();" title="">Er noen fra Argos?</button>
-            </div>
-        </footer>
-    </div>
-    <br>
-<div id="valg3_6">
-		<p>
-"Han du nettopp drepte var fra Argos, men det dyret var allerede ment for Romas arenaer."<br><br>
-Slavehandleren gir deg noen mynter og ber deg om å dra. Dette dyret trengtes ikke lengere og dermed var han sine midler dine.
-		</p>        
-        <footer>
-        	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_7').scrollIntoView();" title="Fangen blir drept av slavehandleren.">Ta imot pengene og til sentrum</button>
-            </div>
-        </footer>
-    </div>
-    <br>
-<div id="valg3_7">
-		<p>
-Du klarer å hoppe unna og fangen klarer å stikke av. <br>
-Slavehandleren ser bort på bakke der angriperen ligger død og sier noe på et språk du ikke forstår.
-		</p>        
-        <footer>
-        	<div>
-              	<button class="contBtn" type="button" onClick="document.getElementById('valg3_8').scrollIntoView();" title="">Dra til sentrum</button> 
-            </div>
-        </footer>
-    </div>
-<br>
 
 <div id="valg3_8">
 <p>
@@ -515,12 +635,12 @@ Du vandrer inn mot byens sentrum.  Hvor vil du gå herfra?<br>
 I antikkens Megara var det et tempel der man kunne be til gudinnen Athene. De fleste byer rundt Athen adopterte dette og bygde templer i heder.<br>
 Du setter deg ned i hagen foran templet for å kunne slappe av og høre på hva prestene i byen sier.<br>
 </p>
-<p id="getHerb"></p>
+<!--p id="getHerb"></p-->
 <p id="inventory1"></p>        
 <footer>
     <div>
         <button class="contBtn" type="button" onClick="document.getElementById('valg3_14, valg_15').scrollIntoView();" title="">Tilbake til sentrum</button> | 
-        <input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()">  
+        <!--input type="image" src="img/bag.png" height="57" width="50" class="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="listInv()"-->  
     </div>
 </footer>
 </div>

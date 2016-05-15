@@ -86,7 +86,7 @@ p {
 	margin-left: 536px;
 }
 
-.bag {
+#bag {
 	position: fixed;
 	z-index: 9998;
 }
@@ -95,7 +95,18 @@ p {
 	position: fixed;
 	z-index: 9999;
 	margin-left: 50px;
+	margin-top: 0.5px;
 	background-image: url(img/bag_panel.png);
+	background-origin: padding-box;
+	background-size: cover;
+	display: none;
+	height: 90px;
+}
+
+#list {
+	margin-left: -12px;
+	margin-top: -1px;
+	margin-right: 10px;
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
@@ -130,7 +141,7 @@ p {
 	border-color:#FFD02E;
 }
 
-#inventory_gift {
+#inventory_gift, #getHerb {
 	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size:14px;
 	color: #00C0D0;
