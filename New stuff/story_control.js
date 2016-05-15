@@ -36,3 +36,15 @@ function showBar() {
 	document.getElementById('scene10_gutt').scrollIntoView();
 	document.getElementById("bag").style.visibility = "visible";
 }
+
+function murderMystery() {
+	"use strict";
+	if ($('.contBtn_mAlive').data('clicked')) {
+		document.getElementById("decision1").innerHTML = "Du ser rundt deg for at kysten er klar. Du kjenner en frysning ned ryggen, men lar det gå.";
+		$('body').scrollTop('scene13_morder');
+	}
+	if ($('.contBtn_mDead').data('clicked')) {
+		document.getElementById("decision1").innerHTML = "Du vasker av blodet fra sverdet ditt med sliren og fester sverdet ved beltet. Du føler deg noe kvalm, men klarer å holde det nede.";
+		$('body').scrollTop('scene13_morder');
+}
+}

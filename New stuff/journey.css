@@ -110,7 +110,7 @@ p {
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn, .contBtn_inv {
+.contBtn, .contBtn_inv, .contBtn_mrdr, .contBtn_mDead, .contBtn_mAlive {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -128,7 +128,7 @@ p {
 	cursor: pointer;
 }
 
-.contBtn:hover, .contBtn_inv:hover {
+.contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
