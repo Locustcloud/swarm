@@ -109,8 +109,40 @@ p {
 	margin-right: 10px;
 }
 
+#bar {
+	position:relative;
+}
+
+.loadBar {
+	z-index: 999;
+	position: absolute;
+	margin-top: -300px;
+	margin-left: 135px;
+}
+
+.loadBar_element {
+	z-index: 998;
+	position: absolute;
+	margin-top: -299px;
+	margin-left: 150px;
+	background-color:#FF0004;
+	height: 64px;
+	width: 200px;
+}
+
+.loadBar_bcg {
+	z-index: 997;
+	position: absolute;
+	margin-top: -299px;
+	margin-left: 150px;
+	background-color:black;
+	opacity: 0.8;
+	height: 64px;
+	width: 950px;
+}
+
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn, .contBtn_inv, .contBtn_mrdr, .contBtn_mDead, .contBtn_mAlive {
+.contBtn, .contBtn_inv, .contBtn_mrdr, .contBtn_mDead, .contBtn_mAlive, .contBtn_bandit {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -128,7 +160,7 @@ p {
 	cursor: pointer;
 }
 
-.contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover {
+.contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover, .contBtn_bandit:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
