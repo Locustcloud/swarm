@@ -2,7 +2,6 @@
 var inv = ["Bronsesverd", " bronserustning"," kart"];
 var executed = false;
 var angrep = false;
-var banditter = false;
 
 
 
@@ -66,28 +65,16 @@ function murderMystery () {
 	}
 }
 
-/*
-function morderAttack() {
+//Tekst
+$(document).ready(function(){
 	"use strict";
-	angrep = true;
-	document.getElementById('scene11_gutt_angrep0').scrollIntoView();
-}
-
-function morderEscape () {
-	"use strict";
-	angrep = false;
-	document.getElementById('scene11_gutt_dukk0').scrollIntoView();
-}
-
-function murderMystery () {
-	"use strict";
-	if (angrep) {
-		document.getElementById("decision1").innerHTML = "Du vasker av blodet fra sverdet ditt med sliren og fester sverdet ved beltet. Du føler deg noe kvalm, men klarer å holde det nede.";
-		document.getElementById("scene13_morder").scrollIntoView();
-	}
-	else {
-		document.getElementById("decision1").innerHTML = "Du ser rundt deg for at kysten er klar. Du kjenner en frysning ned ryggen, men lar det gå.";
-		document.getElementById("scene13_morder").scrollIntoView();
-	}
-}
-*/
+    $(".contBtn_shashljik").click(function(){
+        $(".loadBar_element").animate({ 
+		width: '935px' ,
+		easing: 'linear'
+		}, {
+		duration: 5000,
+		easing: 'linear'
+		});
+    });
+});

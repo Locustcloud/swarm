@@ -139,7 +139,7 @@ Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
     <div class="UI">
     	<table style="width: 100%">
         	<tr>
-                <td><button class="contBtn" type="button" onClick="setTimeout(timedBandits, 5000)">Dytt banditten vekk</button></td>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene5_gutt_run').scrollIntoView();">Dytt banditten vekk</button></td>
             </tr>
       </table>
   </div>
@@ -166,6 +166,20 @@ Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å kom
   <div class="bilde">
    	<img src="img/placeholder.jpg" alt="Placeholder" width="1280" height="720">
   </div>
+  <div class="loadbar">
+    <img class="loadBar_bar" src="img/loadBar.png" width="979" height="66" alt=""/>
+    <div class="loadBar_element" style="z-index:998; position:absolute; margin-top:351px; margin-left:160px; background-color:#FF0004; height:64px; width:14px;"></div> 
+    <div class="loadBar_bcg"></div>
+  </div>
+  
+  	z-index: 998;
+	position: absolute;
+	margin-top: 351px;
+	margin-left: 160px;
+	background-color:#FF0004;
+	height: 64px;
+	width: 200px;
+  
     <div class="UI">
     	<table style="width: 100%">
         	<tr>
@@ -176,6 +190,9 @@ Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å kom
             </tr>
          	<tr>
                 <td><button class="contBtn" type="button" onClick="document.getElementById('scene6_gutt').scrollIntoView();">INSERT QTE HERE3</button></td>
+            </tr>
+            <tr>
+            	<td><button class="contBtn_shashljik" type="button">Click to start</button></td>
             </tr>
       </table>
   </div>
