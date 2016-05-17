@@ -111,7 +111,7 @@ function klokkeFunc() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 3000);
+	}, 2000);
 }
 
 function klokkeFuncStop() {
@@ -124,7 +124,7 @@ function klokkeFunc0() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 3000);
+	}, 1000);
 }
 
 function klokkeFuncStop0() {
@@ -137,7 +137,7 @@ function klokkeFunc1() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 3000);
+	}, 500);
 }
 
 function klokkeFuncStop1() {
