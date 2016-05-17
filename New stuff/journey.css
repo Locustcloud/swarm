@@ -144,7 +144,7 @@ p {
 }
 
 /* Kanppen som blir brukt for å få ting til å gå videre */
-.contBtn, .contBtn_inv, .contBtn_mrdr, .contBtn_mDead, .contBtn_mAlive, .contBtn_bandit, .contBtn_shashljik {
+.contBtn, .contBtn_inv, .contBtn_mrdr, .contBtn_mDead, .contBtn_mAlive, .contBtn_bandit {
 	background-image: url(img/selections.png);
 	border: none;
 	color: white;
@@ -162,7 +162,7 @@ p {
 	cursor: pointer;
 }
 
-.contBtn_shashljik {
+#contBtn_shashljik0, #contBtn_shashljik1, #contBtn_shashljik2 {
 	z-index: 999;
 	background-image: url(img/selections.png);
 	position: absolute;
@@ -184,7 +184,7 @@ p {
 	margin-left: 45px;
 }
 
-.contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover, .contBtn_bandit:hover, .contBtn_shashljik:hover {
+.contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover, .contBtn_bandit:hover {
 	background-image: url(img/selections_on.png);
 	color:#FFD02E;
 	border: none;
@@ -197,7 +197,7 @@ p {
 	border-color:#FFD02E;
 }
 
-.contBtn_shashljik:hover {
+#contBtn_shashljik0:hover, #contBtn_shashljik1:hover, #contBtn_shashljik2:hover {
 	z-index: 999;
 	background-image: url(img/selections_on.png);
 	position: absolute;
@@ -224,6 +224,10 @@ p {
 	z-index: 998;
 	margin-top: -650px;
 	margin-left: 400px;
+}
+
+#agora, #hetaira {
+	color: #c5b358;
 }
 
 /* Animasjoner */

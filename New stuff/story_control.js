@@ -69,12 +69,38 @@ function murderMystery () {
 //Loadbar stuff
 $(document).ready(function(){
 	"use strict";
-    $(".contBtn_shashljik").click(function(){
-        $(".loadBar_element").animate({ 
+    $("#contBtn_shashljik0").click(function(){
+        $(".loadBar_element0").animate({ 
 		width: '14px' ,
 		easing: 'linear'
 		}, {
-		duration: 3000,
+		duration: 2000,
+		easing: 'linear'
+		});
+    });
+});
+
+$(document).ready(function(){
+	"use strict";
+    $("#contBtn_shashljik1").click(function(){
+        $(".loadBar_element1").animate({ 
+		width: '14px' ,
+		easing: 'linear'
+		}, {
+		duration: 1000,
+		easing: 'linear'
+		});
+    });
+});
+
+$(document).ready(function(){
+	"use strict";
+    $("#contBtn_shashljik2").click(function(){
+        $(".loadBar_element2").animate({ 
+		width: '14px' ,
+		easing: 'linear'
+		}, {
+		duration: 500,
 		easing: 'linear'
 		});
     });
@@ -92,4 +118,30 @@ function klokkeFuncStop() {
 	"use strict";
 	clearTimeout(klokke);
 	document.getElementById("scene5_gutt_run0").scrollIntoView();
+}
+
+function klokkeFunc0() {
+	"use strict";
+	klokke = setTimeout(function(){
+		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
+	}, 3000);
+}
+
+function klokkeFuncStop0() {
+	"use strict";
+	clearTimeout(klokke);
+	document.getElementById("scene5_gutt_run1").scrollIntoView();
+}
+
+function klokkeFunc1() {
+	"use strict";
+	klokke = setTimeout(function(){
+		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
+	}, 3000);
+}
+
+function klokkeFuncStop1() {
+	"use strict";
+	clearTimeout(klokke);
+	document.getElementById("scene5_gutt_run2").scrollIntoView();
 }
