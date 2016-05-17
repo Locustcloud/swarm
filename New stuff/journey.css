@@ -230,6 +230,11 @@ p {
 	color: #c5b358;
 }
 
+#decision1, #decision2 {
+	font-style:italic;
+	color: #ffd700;
+}
+
 /* Animasjoner */
 /* Scene 1 */
 .darkness {

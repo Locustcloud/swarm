@@ -35,13 +35,19 @@ function herbs() {
 	inv.push(" urter");
 }
 
+function coin() {
+	"use strict";
+	document.getElementById('scene17_gutt').scrollIntoView();
+	inv.push(" medaljong med ansikt");
+}
+
 function showBar() {
 	"use strict";
 	document.getElementById('scene10_gutt').scrollIntoView();
 	document.getElementById("bag").style.visibility = "visible";
 }
 
-//Morder scenario
+//Morder scenario 1
 function morderAttack() {
 	"use strict";
 	angrep = true;
@@ -61,8 +67,34 @@ function murderMystery () {
 		document.getElementById("scene13_morder").scrollIntoView();
 	}
 	else {
-		document.getElementById("decision1").innerHTML = "Du ser rundt deg for at kysten er klar. Du kjenner en frysning ned ryggen, men lar det gå.";
+		document.getElementById("decision1").innerHTML = "Du ser rundt deg for at kysten er klar. Plutselig kjenner du en frysning ned ryggen, men lar det gå.";
 		document.getElementById("scene13_morder").scrollIntoView();
+	}
+}
+
+//Morder scenario 2
+function murderMystery1 () {
+	"use strict";
+	if (angrep) {
+		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara gå på en båt med romerske seil.<br>Romerske soldater går bak dem og får dem inn på båten.";
+		document.getElementById("scene15_gutt").scrollIntoView();
+	}
+	else {
+		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara snakke med militiaen.";
+		document.getElementById("scene15_gutt").scrollIntoView();
+	}
+}
+
+//Morder scenario 3
+function murderMystery2 () {
+	"use strict";
+	if (angrep) {
+		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara gå på en båt med romerske seil.<br>Romerske soldater går bak dem og får dem inn på båten.";
+		document.getElementById("scene15_gutt").scrollIntoView();
+	}
+	else {
+		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara snakke med militiaen.";
+		document.getElementById("scene15_gutt").scrollIntoView();
 	}
 }
 
@@ -74,7 +106,7 @@ $(document).ready(function(){
 		width: '14px' ,
 		easing: 'linear'
 		}, {
-		duration: 2000,
+		duration: 5000,
 		easing: 'linear'
 		});
     });
@@ -87,7 +119,7 @@ $(document).ready(function(){
 		width: '14px' ,
 		easing: 'linear'
 		}, {
-		duration: 1000,
+		duration: 3000,
 		easing: 'linear'
 		});
     });
@@ -100,7 +132,7 @@ $(document).ready(function(){
 		width: '14px' ,
 		easing: 'linear'
 		}, {
-		duration: 500,
+		duration: 1000,
 		easing: 'linear'
 		});
     });
@@ -111,7 +143,7 @@ function klokkeFunc() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 2000);
+	}, 5000);
 }
 
 function klokkeFuncStop() {
@@ -124,7 +156,7 @@ function klokkeFunc0() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 1000);
+	}, 3000);
 }
 
 function klokkeFuncStop0() {
@@ -137,7 +169,7 @@ function klokkeFunc1() {
 	"use strict";
 	klokke = setTimeout(function(){
 		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
-	}, 500);
+	}, 1000);
 }
 
 function klokkeFuncStop1() {
