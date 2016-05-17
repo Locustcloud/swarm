@@ -2,6 +2,7 @@
 var inv = ["Bronsesverd", " bronserustning"," kart"];
 var executed = false;
 var angrep = false;
+var klokke;
 
 
 
@@ -65,16 +66,30 @@ function murderMystery () {
 	}
 }
 
-//Tekst
+//Loadbar stuff
 $(document).ready(function(){
 	"use strict";
     $(".contBtn_shashljik").click(function(){
         $(".loadBar_element").animate({ 
-		width: '935px' ,
+		width: '14px' ,
 		easing: 'linear'
 		}, {
-		duration: 5000,
+		duration: 3000,
 		easing: 'linear'
 		});
     });
 });
+
+//Timer
+function klokkeFunc() {
+	"use strict";
+	klokke = setTimeout(function(){
+		document.getElementById("scene5_gutt_gameOver0").scrollIntoView();
+	}, 3000);
+}
+
+function klokkeFuncStop() {
+	"use strict";
+	clearTimeout(klokke);
+	document.getElementById("scene5_gutt_run0").scrollIntoView();
+}

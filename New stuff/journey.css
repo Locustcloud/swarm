@@ -220,6 +220,12 @@ p {
 	font-style: italic;
 }
 
+.gameOver {
+	z-index: 998;
+	margin-top: -650px;
+	margin-left: 400px;
+}
+
 /* Animasjoner */
 /* Scene 1 */
 .darkness {
