@@ -2,6 +2,12 @@
 /* CSS Document */
 body {
 	background-color: black;
+	overflow:scroll; /*sett til scroll eller kommenter ut for debug*/
+}
+
+#scene1 {
+	width:100%;
+	height: 100%;
 }
 
 p {
@@ -72,13 +78,6 @@ p {
 	margin-top: 450px;
 }
 
-.gameOver {
-	z-index: 5;
-	position: absolute;
-	margin-left: 360px;
-	margin-top: -650px;
-}
-
 .timedEvent {
 	z-index: 5;
 	positon: absolute;
@@ -89,12 +88,13 @@ p {
 #bag {
 	position: fixed;
 	z-index: 9998;
+	margin-left: 15px;
 }
 
 .inventory {
 	position: fixed;
 	z-index: 9999;
-	margin-left: 50px;
+	margin-left: 60px;
 	margin-top: 0.5px;
 	background-image: url(img/bag_panel.png);
 	background-origin: padding-box;
@@ -162,7 +162,7 @@ p {
 	cursor: pointer;
 }
 
-#contBtn_shashljik0, #contBtn_shashljik1, #contBtn_shashljik2 {
+#contBtn_shashljik0, #contBtn_shashljik1, #contBtn_shashljik2, #contBtn_shashljik3 {
 	z-index: 999;
 	background-image: url(img/selections.png);
 	position: absolute;
@@ -180,8 +180,8 @@ p {
 	-o-transition: 0.4;
 	transition: 0.4;
 	cursor: pointer;
-	margin-top: -290px;
-	margin-left: 45px;
+	margin-top: -200px;
+	margin-left: 27px;
 }
 
 .contBtn:hover, .contBtn_inv:hover, .contBtn_mrdr:hover, .contBtn_mDead:hover, .contBtn_mAlive:hover, .contBtn_bandit:hover {
@@ -197,7 +197,7 @@ p {
 	border-color:#FFD02E;
 }
 
-#contBtn_shashljik0:hover, #contBtn_shashljik1:hover, #contBtn_shashljik2:hover {
+#contBtn_shashljik0:hover, #contBtn_shashljik1:hover, #contBtn_shashljik2:hover, #contBtn_shashljik3:hover {
 	z-index: 999;
 	background-image: url(img/selections_on.png);
 	position: absolute;
@@ -222,8 +222,20 @@ p {
 
 .gameOver {
 	z-index: 998;
-	margin-top: -650px;
-	margin-left: 400px;
+	margin-top: -500px;
+	margin-left: 350px;
+}
+
+.gameOver2 {
+	z-index: 998;
+	margin-top: -500px;
+	margin-left: 350px;
+}
+
+.gameOver1 {
+	position: absolute;
+	z-index: 998;
+	margin-left: 250px;
 }
 
 #agora, #hetaira {

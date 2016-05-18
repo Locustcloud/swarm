@@ -4,7 +4,12 @@ var executed = false;
 var angrep = false;
 var klokke;
 
-
+function innlast() {
+	"use strict";
+	alert("Vennligst ikke klikk refresh/reload/oppdater knappen!");
+	alert("Dette stopper enkelte ting fra å fungere. Utenom det, nyt spillet :)");
+	alert("Jente delen av historien kommer...");
+}
 
 function ShowThisShit(){
 	"use strict";
@@ -89,12 +94,10 @@ function murderMystery1 () {
 function murderMystery2 () {
 	"use strict";
 	if (angrep) {
-		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara gå på en båt med romerske seil.<br>Romerske soldater går bak dem og får dem inn på båten.";
-		document.getElementById("scene15_gutt").scrollIntoView();
+		document.getElementById("scene18_gutt").scrollIntoView();
 	}
 	else {
-		document.getElementById("decision2").innerHTML = "I sidesynet får du øye på gruppen med slaver du så i Megara snakke med militiaen.";
-		document.getElementById("scene15_gutt").scrollIntoView();
+		document.getElementById("scene17_gutt_fDead0").scrollIntoView();
 	}
 }
 
@@ -138,6 +141,19 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+	"use strict";
+    $("#contBtn_shashljik3").click(function(){
+        $(".loadBar_element3").animate({ 
+		width: '14px' ,
+		easing: 'linear'
+		}, {
+		duration: 2000,
+		easing: 'linear'
+		});
+    });
+});
+
 //Timer
 function klokkeFunc() {
 	"use strict";
@@ -176,4 +192,17 @@ function klokkeFuncStop1() {
 	"use strict";
 	clearTimeout(klokke);
 	document.getElementById("scene5_gutt_run2").scrollIntoView();
+}
+
+function klokkeFunc2() {
+	"use strict";
+	klokke = setTimeout(function(){
+		document.getElementById("scene17_gutt_fGameOver").scrollIntoView();
+	}, 2000);
+}
+
+function klokkeFuncStop2() {
+	"use strict";
+	clearTimeout(klokke);
+	document.getElementById("scene17_gutt_fDead1").scrollIntoView();
 }

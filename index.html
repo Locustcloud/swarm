@@ -1,82 +1,1071 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<title>Parthenon Trail</title>
-<!Stylesheets>
-<link rel="stylesheet" type="text/css" href="mainboard_css.css">
-<!Scripts>
-<script src="/socket.io/socket.io.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<meta charset="utf-8">
+<!--link rel="stylesheet" href="gj_css.css"-->
+<link rel="stylesheet" href="journey.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script type="text/javascript" src="story_control.js"></script>
+<title>Reisen til Sparta: Episode 1</title>
 </head>
+<body onLoad="innlast();">
 
-<body onload="enterName()">
-	<div id="gameBoard">
-	<!Canvas elementet>
-	<canvas id="mainBoard" width="960" height="720">
-	Nettleseren din støtter ikke HTML5 sitt canvas tag. Bruk en annen nettleser som Google Chrome! <link src="https://www.google.com/chrome/">Last ned her!</link>
-	Your browser does not support the HTML5 canvas tag. Use another browser like Google Chrome! <link src="https://www.google.com/chrome/">Download!</link>
-	</canvas>
-	<input id="nextBtn" type="image" src="img/text_bottan.png" width="24" height="34" onClick="ctrlBtn()">
-	
-	<textarea id="storyDialog" readonly>
-	</textarea>
-</div>
-<div id="chatWrap">
-	<div id="chat">
-		<ul id="messages"></ul>
-	</div>
-	<form id="meldinger" action="">
-		<input id="m" autocomplete="off" /><button id="send">Send</button>
-	</form>
-</div>
-	
-	<p id="user" hidden></p>
+<input type="image" src="img/bag.png" height="57" width="50" id="bag" title="Denne knappen viser deg hva du har med på eventyret" onClick="ShowThisShit()" style="visibility:hidden">
+<p class="inventory"></p>
 
-	<script id="chatting_stuff">
-		var person;
-		var d = new Date();
-		var socket = io();
-		
-		//socket emit
-		$('form').submit(function(){
-			socket.emit('chat message', $('#m').val());
-			$('#m').val('');
-			return false;
-		});
-		
-		socket.on('chat message', function(msg){
-			var d = new Date();
-			//$('#messages').append($('<li>').text(d.toLocaleTimeString()));
-			$('#messages').append($('<li>').html('['+d.toLocaleTimeString()+']'+ ' ' + msg));
-			$('#chat').animate({scrollTop: $('#chat').prop("scrollHeight")}, 692);
-		});
-		
-		socket.on('user connected', function(user){
-			$('#messages').append($('<li style="color:red; font-weight: bold;">').text(user + ' has connected!'));
-			
-		});
-		
-		socket.on('disconnect', function(){
-			$('#messages').append($('<li style="color:red; font-weight: bold;">').text('You have been disconnected!'));
-			document.getElementById("storyDialog").value = "";
-			StartAnimation = false;
-		});
-		
-		socket.on('readyToRumble', function() {
-			document.getElementById("nextBtn").style.visibility = "hidden";
-			startAnimation = false;
-			draw();
-		});
-		
-		function enterName() {
-			person = prompt("Please enter your name:");
-			
-			if (person != null) {
-				socket.emit('user name', person);
-				document.getElementById("storyDialog").value = textDialogs[indexDialog];
-			}
-		};
-	</script>
+<div id="akt1">
+<div id="scene1">
+  <div class="bilde">
+   	<div class="darkness"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+            	<td><button class="contBtn" type="button" onClick="document.getElementById('scene2').scrollIntoView();">Gå nærmere lyset</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    	<p>
+Det er mørkt rundt deg. Uansett hvor mye du prøver å åpne øyene virker det som om de er lukket. <br>
+Du prøver å se deg rundt, og får plutselig øye på et svakt, pulserende lys. Lyset ser ut til å hviske noe til deg...        
+   	  </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene2">
+  <div class="bilde">
+   	<div class="brighter"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene3_gutt').scrollIntoView();">Sønn av Zevs</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('').scrollIntoView();">Datter av Hera</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    	<p>
+I det du går nærmere lyset blir hviskingen høyere og du kan høre en stemme som snakker. <br>
+Den ser ut til å snakke til deg: <br><br>
+- <i>Er du en <b>sønn</b> av Zevs eller <b>datter</b> av Hera?</i> <br><br>
+Stemmen gjenntar de samme ordene om og om igjen...      
+   	  </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene3_gutt">
+  <div class="bilde">
+    <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 
+    </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene4_gutt').scrollIntoView();">Fortsett</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    	<p>
+Ved lyden av ordene dine blir lyset sterkere og sterkere. Stemmen som snakket tidligere blir svakere jo sterkere lyset skinner. <br>
+Du kan svakt høre ordene: "En sønn av Zevs blir født i dag..." <br>
+Lyset blir mer og mer intest til alt du ser bare er hvitt. <br>
+Du kjenner en varme mot kroppen og en svak stemme hviske deg i øret: <br>
+<br>
+<em> - Min sønn, storhet venter på deg bak horisonten...</em>    
+   	  </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene4_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene5_gutt').scrollIntoView();">Løp mot agoraen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p> Du løper ned trappen hjemme og klarer neste å velte faren din sin kyrass fra veggen. <br>
+      I det du retter den opp igjen får du øye på deg selv i den blanke bronsen. <br>
+  <br>
+  "Der er du! Ta disse pengene og kjøp appelsiner fra <strong id="agora" title="Agoraen var en sentral del av antikkens bypoliser. De hadde rollen som marked og forumer der byens befolkning kunne møtes for å ta viktige avgjørelser. Det nærmeste vi kommer til dagens agoraer er en markedsplass eller bysentrum."><em>agoraen</em></strong> før kjøpmannen drar."<br>
+      Moren din dytter deg ut av døra og du <strong>løper smilende mot markedet.</strong> </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene5_gutt_run').scrollIntoView();">Dytt banditten vekk</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Agoraen i Athen var det sentrale torget i bystaten Athen. Det er også den mest kjente agoraen.<br>
+Du kan lukte stålet fra myntverket blande seg med den gode lukten fra bakeriet. <br>
+Markedet er i full gang, det er veldig folksomt, og du tar en snarvei for å komme deg til kjøpmannen.<br><br>
+"Hehe, hva har vi her?" En gjeng med banditter står bak deg, og du klarer nesten å miste myntene du har i hånden. <br>
+- Hva har vi her? Hva skal en ung gutt med så mye penger? Gi oss pengene så blir ingen skadet.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt_gameOver0">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/>	
+    <p class="gameOver" style="color: red; font-size: 80px;"><b>GAME OVER!</b></p>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene5_gutt').scrollIntoView();">Prøv igjen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Tiden er ute!
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt_run">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+  <div class="loadbar">
+    <img class="loadBar_bar" src="img/loadBar.png" width="979" height="66" alt=""/>
+    <div class="loadBar_element0" style="z-index:998; position:absolute; margin-top:351px; margin-left:160px; background-color:#2660FF; height:64px; width:935px;"></div> 
+    <div class="loadBar_bcg"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="klokkeFuncStop();">Hopp over</button></td>
+            </tr>
+            <tr>
+            	<td><button id="contBtn_shashljik0" type="button" onClick="klokkeFunc();">Start</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du dytter til banditten og han faller på bakken i det du løper ned en bakgate. Du kan høre at de roper etter deg, <br>
+men du fokuserer på å kommme deg vekk. Foran deg ser du et trebord, tenk fort! <br><br>
+Dette er en serie med tidsbegresede hendelser. Trykk på start for å begynne hver hendelse.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt_run0">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+  <div class="loadbar">
+    <img class="loadBar_bar" src="img/loadBar.png" width="979" height="66" alt=""/>
+    <div class="loadBar_element1" style="z-index:998; position:absolute; margin-top:351px; margin-left:160px; background-color:#2660FF; height:64px; width:935px;"></div> 
+    <div class="loadBar_bcg"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="klokkeFuncStop0();">Skli under</button></td>
+            </tr>
+            <tr>
+            	<td><button id="contBtn_shashljik1" type="button" onClick="klokkeFunc0();">Start</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du klarer å hoppe over trebordet uten problemer og fortsetter å løpe!<br>
+Foran deg ser du et høyt gjerde med et hull du kan skli under, tenk fort!
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt_run1">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+  <div class="loadbar">
+    <img class="loadBar_bar" src="img/loadBar.png" width="979" height="66" alt=""/>
+    <div class="loadBar_element2" style="z-index:998; position:absolute; margin-top:351px; margin-left:160px; background-color:#2660FF; height:64px; width:935px;"></div> 
+    <div class="loadBar_bcg"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="klokkeFuncStop1();">SPRINT!</button></td>
+            </tr>
+            <tr>
+            	<td><button id="contBtn_shashljik2" type="button" onClick="klokkeFunc1();">Start</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du klarer å skli under gjerdet, reiser deg raskt opp og ser friheten i slutten av gaten!<br>
+Siste innspurt nå, bare å sprinte alt du kan!
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene5_gutt_run2">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene6_gutt').scrollIntoView();">Fortsett</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du klarer å komme deg unna bandittene og beholder pengene dine. <br>
+Med seier i tankene og smil om munnen ser du ikke forna deg mens du løper og kræsjer i en armert soldat. <br>
+Bandittene ser ser soldaten og løper vekk, mens du klarer bare å stå der i frykt. <br>
+Redd prøver du å gå vekk, men beina dine er låst i det soldaten bøyer seg ned på kne.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene6_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene7_gutt').scrollIntoView();">Fortsett</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Det virker som om tiden står stille i det soldaten bøyer seg ned mot deg. Du legger opp armene frykt, men det som skjer overasker deg. <br>
+Soldaten legger hånden sin på skulderen din: "Går det bra, barn?"<br>
+Du reiser deg opp og forklarer at du har vondt i tennene og må kjøpe noen appelsiner til mor. <br>
+Vakten kjøper appelsiner til deg og går med deg hjem.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene7_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene8_gutt').scrollIntoView();">Gå til sengs</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox_lg">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content_lg">
+    <p>
+Moren din blir blir veldig overasket over å se deg gå inn døra med en væpnet soldat, men roer seg raskt ned. <br>
+Soldaten forteller at han kjenner din far og at han må forbli i Argos en stund til.<br>
+Dagen er ferd med å bli veldig anderledes i det soldaten forteller deg at du har fått oppgaven å levere et viktig <br>
+Dokument fra Athen til Sparta. Dette skulle være din fars oppgave, men siden han er ute er det du som må gjøre det. <br><br>
+- Jeg skal hjelpe pappa! <br>
+- Jeg vet du vil, men vær forsiktig. <br><br>
+Dagen i dag har vært lang og du må gjøre deg klar til å reise ut i morgen.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene8_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn_inv" type="button" onClick="listPackage()">Spør hva som er i pakken</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene9_gutt').scrollIntoView();">Gå ned og spis frokost</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+<strong><i>Bank, bank, bank</i></strong><br><br>
+Du våkner av at moren din står i døra på rommet ditt med en lærbundet pakke.<br><br>
+Du går trøtt ut av senga, kler på deg og gir hun en klem. <br><br>
+    </p>
+    <p id="inventory_gift"></p>  
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene9_gutt">
+  <div class="bilde">
+  <img src="img/ancient_athens.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="showBar();">Begynn reisen mot Korinthos</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Frokosten smaker fantastisk med de ferske appelsinene fra dagen før. Du hiver i deg så mye orker å spise.<br><br>
+Etter at du har spist tar du på deg skoene, gir moren din en god klem<br><br>
+Med innholdet i gaven på deg og en liten tåre i øyet gjør du deg til å reise. Soldaten fra igår står klar med en hest til han og deg.
+    </p>  
+  </div>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="akt2">
+	<div id="scene10_gutt">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn_mDead" type="button" onClick="morderAttack();">Angrip fangen</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn_mAlive" type="button" onClick="morderEscape();">Dukk unna</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Første stoppet på reisen er i byen Megara. Megara er en gjennomgangsby i nærheten av Korinthos, noe som gjør den til en hub for gjennomreisende. <br><br>
+Dere stopper i byen for å samle proviant og for å samle informasjon. Mens du går rundt i byen går en gruppe folk som ser ut som slaver forbi deg. <br>
+Denne gruppen ledes av en høy, mørkhudet mann med sverd på beltet. <br><br>
+Slavene ser ut som Athenere. <br>
+En av slavene rømmer, begynner å slå rundt seg, dreper en annen slave og løper mot deg.
+Hva gjør du?
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_angrep0">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene11_gutt_angrep1').scrollIntoView();" title="">Er noen fra Argos?</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går bort til slavedriveren og spør hvor slavene er fra. De viser seg å ikke være slaver, men tidligere forbrytere ment for arenaene i Roma.<br><br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_angrep1">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Ta imot pengene, gå mot sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+"Han du nettopp drepte var fra Argos, men det dyret var allerede ment for Romas arenaer" sier slavedriveren på brukken Gresk.<br><br>
+Slavehandleren gir deg noen mynter og ber deg om å dra. Dette dyret trengtes ikke lengere og dermed var han sine midler dine.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene11_gutt_dukk0">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Dra til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du klarer å hoppe unna og fangen klarer å stikke av. <br>
+Slavehandleren ser bort på bakkenn der angriperen ligger død og sier noe på et språk du ikke forstår.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="herbs();" title="">Tempelet</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt_filosof').scrollIntoView();" title="">Filosofer</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="murderMystery();">Gå til vakten din</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du vandrer inn mot byens sentrum.  Hvor vil du gå herfra?<br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt_tempel">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Tilbake til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+I antikkens Megara var det et tempel der man kunne be til gudinnen Athene. De fleste byer rundt Athen adopterte dette og bygde templer i heder.<br>
+Du setter deg ned i hagen foran templet for å kunne slappe av og høre på hva prestene i byen sier.<br>
+    </p><br>
+    <p id="getHerb"></p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene12_gutt_filosof">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene12_gutt').scrollIntoView();" title="">Tilbake til sentrum</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+I skyggen ved en fontene ser du en gruppe menn som taler til en forsamling. Du går bort og får vite at disse er filosofer som taler til folket.<br>
+<i>Filosofene i antikkens tid var hva vi kjenner som nåtidens lærere, og de som var fra Athen dro ofte ut for å opplyse folket i nærliggende byer.</i><br><br>
+
+Du går bort til en av filosofene, slår av en prat og filosofen gir deg navnet til hans lærer i Korinthos.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+	<div id="scene13_morder">
+  <div class="bilde">
+   	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene14_gutt').scrollIntoView();" title="">Begynn reisen mot Korinthos</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går tilbake til byporten og møter vakten din klar for reise. <br>
+<!--Morderens skjebne-->
+<p id="decision1"></p>
+    </p>
+  </div>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="akt3">
+<div id="scene14_gutt">
+  <div class="bilde">
+    <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="murderMystery1();">Besøk agoraen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du blir overrasket over størrelsen til Korinthos. Du har sjeldent vært utenfor Athen, men at det fantes en by med nesten like mye rikdom som Athen?  <br>
+Korinthos er en storby. I antikken rivaliserte Korinthos med Athen i rikdom, noe som skyldtes handelstrafikken. <br>
+Byen hadde også et tempel som hedret Afrodite, kjærlighetsguddinnen, som på den tiden ansatte hetairaer.  <br>
+Byen var kjent for disse damene som ofte ble kjøpt av rike handelsmenn. <br><br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene15_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="murderMystery2();">Besøk filosofenes abode</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+"Husk å besøk filosofene. En av våre kontakter der kan ha viktig informasjon til oss om Argos" sier vakten din. <br>
+Agoraen i Korinthos er ikke like stor som den i Athen, men den er ikke langt unna.<br>
+Det spesielle her er at det finnes kjøpmenn fra alle forskjellige land og de som vokter gatene er en lokal milita. <br>
+Hvor vil du nå?
+    </p>
+    <p id="decision2"></p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene16_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene16_gutt_gameOver0').scrollIntoView();">Stol på filosofen</button></td>
+            </tr>
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="coin();">Ikke stol på filosofen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går bort til filosofene og får øye på en med Athenske farger. Han for øye på deg, ber deg komme nærmere og sette deg. <br><br>
+- Jeg regner med at du ikke ble forfulgt?<br>
+- Vi ble ikke forfulgt, nei. <br><br>
+Filosofen nikker og forteller deg at situasjonen i Argos er værre en de trodde. "Din far er enda ikke skadet, men idiotene i Argos <br>
+har igjen bestemt seg for å prøve å angripe Sparta."
+- Har du skriftrullen med deg? Godt, gi meg den.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene16_gutt_gameOver0">
+  <div class="bilde">
+   <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/>	
+    <p class="gameOver" style="color: red; font-size: 80px;"><b>GAME OVER!</b></p>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene16_gutt').scrollIntoView();">Prøv igjen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du rekker over dokumentet og filosofen ser på deg med spørrende øyne.  <br>
+Plutselig drar han frem en dolk, river opp brevet ditt, kaster det på bakken og heller vin over det. <br>
+"DU må ikke være så gotroende ovenfor alle. Enhver person er en fiende om du ikke følger med."<br>
+Du ser på filosofen i forakt, men han har rett. Det er ikke mye du kan gjøre nå. <br>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene17_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="coin();">Besøk Afrodites tempel</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+"Jeg vet ikke helt om jeg kan stole på deg. Jeg beklager, men tidene er som du sa, farlige." <br>
+Filosofen ser på deg og nikker på hodet i aksept. "Veldig bra min gutt, du har helt rett." <br>
+Han tar frem en medaljong, med din fars ansikt avbildet på. "Du kan stole på meg, din far gav meg denne og ba meg gi den til deg."<br>
+Du får mynten, takker filosofen og går ut av aboden. <br><br>
+Hva nå?
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene17_gutt_fDead0">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+  <div class="loadbar">
+    <img class="loadBar_bar" src="img/loadBar.png" width="979" height="66" alt=""/>
+    <div class="loadBar_element3" style="z-index:998; position:absolute; margin-top:351px; margin-left:160px; background-color:#2660FF; height:64px; width:935px;"></div> 
+    <div class="loadBar_bcg"></div>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="klokkeFuncStop2();">Angrip morder</button></td>
+            </tr>
+            <tr>
+            	<td><button id="contBtn_shashljik3" type="button" onClick="klokkeFunc2();">Start</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går bort til filosofene og får øye på en med Athenske farger på bakken. Over han står en morderen fra Megara med en blodig dolk. <br><br>
+Du trekker sverdet og gjør deg klar for kamp!<br><br>
+<strong>Morderen går til angrep mot deg, tenk fort!</strong>
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene17_gutt_fDead1">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="coin();">Besøk Afrodites tempel</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går til angrep på morderen, og med et fokusert kutt dreper du morderen. <br>
+Med morderen død på bakken og dine hender fulle av blod løper du bort til filosofen. Før han dør gir han deg en mynt med din fars ansikt på. <br>
+Militiaen løper inn og ser deg ved filosofen og morderen død. De går bort til deg og ber deg om å dra.<br><br>
+Du vasker hendene dine i en vannkrukke utenfor og spyr bak aboden. Du har aldri drept noen og det tærer hardt på deg.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene17_gutt_fGameOver">
+  <div class="bilde">
+   <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/>	
+    <p class="gameOver2" style="color: red; font-size: 80px;"><b>GAME OVER!</b></p>
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene17_gutt_fDead0').scrollIntoView();">Prøv igjen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Morderen angriper, men du klarer ikke å forsvare deg. 
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene18_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene19_gutt_wound').scrollIntoView();">Stopp blødningen med tunikaen</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+I det du nærmer deg tempelet løper 2 menn forbi deg med blodige hender. <br>
+Du løper opp mot tempelet og ser en dame holde en halvnaken, skadet dame tett mot seg. <br>
+Blødningen kommer fra et dypt kutt i armen.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene19_gutt_wound">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene21_gutt').scrollIntoView();">Gå inn i tempelet</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+"Sånn, hun kommer til å bli helt fin nå,
+<!--Om du brukte tunika-->
+men jeg er redd for at det såret bli et arr" sier du trøstende. <br>
+"Mine døtre, uansett stand, skal tas vare på. Tusen takk for hjelpen." <br>
+Stemmen tilhører tempelmoderen. "Kom inn på tempelet om du vil så du kan bli belønnet."
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene21_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene22_gutt').scrollIntoView();">Møt vakten din ved byporten</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+<em>Noen timer senere</em><br><br>
+
+Med et fornøyd uttrykk i ansiktet vinker du til hetairaene, de vinker tilbake og ber deg komme igjen.<br>
+"Definitivt på veien hjemover" tenker du, smiler og holder på pakken du fikk.<br>
+<!--Rewards: penger, skarp dolk og et brev fra hetairaene-->
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene22_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/> 	
+  </div>
+    <div class="UI">
+    	<table style="width: 100%">
+        	<tr>
+                <td><button class="contBtn" type="button" onClick="document.getElementById('scene23_gutt').scrollIntoView();">Møt vakten din ved byporten</button></td>
+            </tr>
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Du går mot midten av agoraen der vakten din står klar og venter. <br>
+Han ser på deg og spør: <br>
+- Fikk du noe fra kontakten?<br>
+- Ja, han ga meg denne mynten og fortalte meg at situasjonen i Argos er alvorlig.<br>
+- Hvordan? <br>
+- Argos har gått til angrep på Sparta igjen.<br>
+Vakten ser tenkende ut i luften før han ber deg gjøre deg klar for alt.
+    </p>
+  </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<div id="scene23_gutt">
+  <div class="bilde">
+  <img src="img/ancient_korinthos_resize.jpg" width="1280" height="720" alt=""/>
+  </div>
+  <p class="gameOver1" style="color: white; font-size: 80px;"><b>Thanks for playing!</b></p>
+    <div class="UI">
+    	<table style="width: 100%">
+      </table>
+  </div>
+  	<div class="textbox_sperre">
+    </div>
+    <div class="textbox">
+    </div>
+    <div class="content_sperre">
+    </div>
+  <div class="content">
+    <p>
+Dette var slutten av første episode. Reisen fortsetter mot Argos. <br><br>
+Hvordan går det med våre helter? Finn ut i Episode 2 når den kommer ut!
+    </p>
+  </div>
+</div>
+</div>
 </body>
-<script src="loadBoard.js"></script>
 </html>
